@@ -8,10 +8,10 @@
     <script>
     function check() {
     if(document.getElementById('password').value === document.getElementById('kpassword').value) {
-        document.getElementById('message').innerHTML = "Match";
+        document.getElementById('message').innerHTML = "Password Cocok Lanjutkan";
         document.getElementById('bsubmit').disabled = false;
     } else {
-        document.getElementById('message').innerHTML = "Password Don't match";
+        document.getElementById('message').innerHTML = "Password Tidak Coccok";
         document.getElementById('bsubmit').disabled = true;
     }
     }
