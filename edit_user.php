@@ -10,11 +10,24 @@ include 'koneksi.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>MANAJEMEN USER</title>
     <link rel="stylesheet" href="">
+
+    <script>
+    function check() {
+    if(document.getElementById('password').value === document.getElementById('kpassword').value) {
+        document.getElementById('message').innerHTML = "Password Cocok Lanjutkan";
+        return true;
+    } else {
+        document.getElementById('message').innerHTML = "Password Tidak Coccok";
+        alert("Password Tidak Coccok");
+        return false;
+    }
+    }
+   </script>
 </head>
 <body></body>
 <center><section>
 <H1>EDIT USER</H1>
-    <form action="update_user.php" method="POST" accept-charset="utf-8">
+    <form onSubmit="return check()" action="update_user.php" method="POST" accept-charset="utf-8">
 
         <?php
             $edit = mysql_query("SELECT * from user where username='$_GET[id]'");
@@ -22,11 +35,16 @@ include 'koneksi.php';
             echo "<table>
             <tr>
                 <td><label for=\"\">Username :</label></td>
-                <td><input type=\"text\" name=\"username\" value=\"$r[username]\" placeholder=\"Username\" required=\"required\"><br></td>
+                <td><input type=\"text\" name=\"username\" value=\"$r[username]\" placeholder=\"Username\" required=\"required\" readOnly><br></td>
             </tr>
             <tr>
                 <td><label for=\"\">Password :</label></td>
-                <td><input type=\"password\" name=\"password\" value=\"\" placeholder=\"Password\" required=\"required\"><br></td>
+                <td><input type=\"password\" name=\"password\" id=\"password\" value=\"\" placeholder=\"Password\" ><br></td>
+            </tr>
+            <tr>
+                <td><label for=\"\">Konfirm Password :</label></td>
+                <td><input type=\"password\" name=\"kpassword\" id=\"kpassword\" value=\"\" placeholder=\"Input ulang password\" onChange=\"check()\"> <span id=\"message\"></span> <br></td>
+
             </tr>
             <tr>
                 <td><label for=\"\">Nama Lengkap :</label></td>
