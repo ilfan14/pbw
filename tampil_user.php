@@ -29,10 +29,10 @@ include 'koneksi.php';
 	<tbody>
 
 		<?php
-			$tampil=mysql_query("SELECT * FROM user");
+			$tampil=mysqli_query($connection, "SELECT * FROM user");
 			$no=1;
 
-			while ($r=mysql_fetch_array($tampil)) {
+			while ($r=mysqli_fetch_array($tampil)) {
 				echo "<tr>
 				<td>$no</td>
 				<td>$r[username]</td>

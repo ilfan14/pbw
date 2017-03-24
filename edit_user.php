@@ -30,8 +30,8 @@ include 'koneksi.php';
     <form onSubmit="return check()" action="update_user.php" method="POST" accept-charset="utf-8">
 
         <?php
-            $edit = mysql_query("SELECT * from user where username='$_GET[id]'");
-            $r = mysql_fetch_array($edit);
+            $edit = mysqli_query($connection,"SELECT * from user where username='$_GET[id]'");
+            $r = mysqli_fetch_array($edit);
             echo "<table>
             <tr>
                 <td><label for=\"\">Username :</label></td>
