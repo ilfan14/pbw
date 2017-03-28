@@ -30,10 +30,10 @@
         }
         // header("location: welcome.php");
       } else {
-         $error = "<span>Usernmae Tidak Tersedia</span>
+         $error = "<span>Username Tidak Terdaftar</span>
                     <script>
                     var timer = setTimeout(function() {
-                      window.location='register.php'
+                      window.location='tambah_user.php'
                     }, 3000);
                     </script>";
       }

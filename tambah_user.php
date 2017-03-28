@@ -5,6 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>MANAJEMEN USER</title>
     <link rel="stylesheet" href="">
+    <script src="jquery-3.1.1.min.js"></script>
+
+    <script>
+        function checkuser() {
+            jQuery.ajax({
+            url: "checkuser.php",
+            data:'user='+$("#username").val(),
+            type: "POST",
+            success:function(data){
+              $("#muser").html(data);
+            },
+            error:function (){}
+            });
+        }
+    </script>
+
+
     <script>
     function check() {
     if(document.getElementById('password').value === document.getElementById('kpassword').value) {
@@ -24,7 +41,8 @@
         <table>
             <tr>
                 <td><label for="">Username :</label></td>
-                <td><input type="text" name="username" value="" placeholder="Username" required="required"><br></td>
+                <td><input type="text" name="username" id="username" value="" placeholder="Username" required="required" onchange="checkuser()"><br></td>
+                <td><span id="muser"> </span></td>
             </tr>
             <tr>
                 <td><label for="">Password :</label></td>
@@ -64,6 +82,7 @@
         </table>
     </form>
 </section>
+    <script src="jquery-3.1.1.min.js"></script>
 
 </body>
 </html>
