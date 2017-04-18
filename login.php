@@ -78,7 +78,6 @@
     <div class="mdl-dialog__content">
       <form action="" method="post" >
         <div class="mdl-textfield mdl-js-textfield">
-<<<<<<< HEAD
           <input class="mdl-textfield__input" type="text" id="username">
           <span id="musername"></span>
           <label class="mdl-textfield__label" for="username">Username</label>
@@ -86,13 +85,6 @@
         <div class="mdl-textfield mdl-js-textfield">
           <input class="mdl-textfield__input" type="password" id="password">
           <span id="mpassword"></span>
-=======
-          <input class="mdl-textfield__input" type="text" id="username" name="iduser">
-          <label class="mdl-textfield__label" for="username">Username</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield">
-          <input class="mdl-textfield__input" type="password" id="password" name="password">
->>>>>>> origin/master
           <label class="mdl-textfield__label" for="password">Password</label>
         </div>
          <?php echo $error; ?>
