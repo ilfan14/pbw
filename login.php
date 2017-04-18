@@ -7,6 +7,23 @@
   <script src="./mdl/material.js"></script>
   <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
   <!-- end framework material desain -->
+  <script type="text/javascript">
+    function checkLogin(str) {
+      if (str.length == 0) { 
+          document.getElementById("musername").innerHTML = "";
+          return;
+      } else {
+          var xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                  document.getElementById("musername").innerHTML = this.responseText;
+              }
+          };
+          xmlhttp.open("GET", "gethint.php?q=" + str, true);
+          xmlhttp.send();
+      }
+    }
+  </script>
 
 </head>
 <body>
@@ -17,10 +34,12 @@
       <form action="input_user.php" method="POST" accept-charset="utf-8">
         <div class="mdl-textfield mdl-js-textfield">
           <input class="mdl-textfield__input" type="text" id="username">
+          <span id="musername"></span>
           <label class="mdl-textfield__label" for="username">Username</label>
         </div>
         <div class="mdl-textfield mdl-js-textfield">
           <input class="mdl-textfield__input" type="password" id="password">
+          <span id="mpassword"></span>
           <label class="mdl-textfield__label" for="password">Password</label>
         </div>
 
