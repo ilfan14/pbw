@@ -24,7 +24,7 @@
                       </a>
                       <ul class="sub">
                           <li><a  href="create_article.php">Buat Artikel</a></li>
-                          <li><a  href="buttons.html">List Artikel</a></li>
+                          <li><a  href="list_article.php">List Artikel</a></li>
                           <li><a  href="panels.html">Comming soon</a></li>
                       </ul>
                   </li>
