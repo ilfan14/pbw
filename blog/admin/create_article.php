@@ -60,10 +60,10 @@ include 'koneksi.php';
                       <h4 class="mb"><i class="fa fa-angle-right"></i> Buat  Artikel</h4>
                       <form class="form-horizontal style-form" action="add_article.php" method="POST" accept-charset="utf-8" enctype="multipart/form-data">
 
-                          <div class="col-lg-12">
+                          <div class="col-lg-12 form-group">
                           <div class="">
-                            <label class="col-sm-1 col-sm-1 control-label">Kategori Artikel</label>
-                              <div class="col-sm-4">
+                            <label class="col-sm-1 col-sm-1 control-label">Kategori</label>
+                              <div class="col-sm-2">
                               <select class="form-control" name="kategori_artikel">
                                 <option value="">PILIH KATEGORI</option>
                                 <?php
@@ -76,9 +76,9 @@ include 'koneksi.php';
                               </div>
                           </div>
 
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Judul Artikel</label>
-                              <div class="col-sm-5">
+                          <div class="" style="float:right;">
+                              <label class="col-sm-2 col-sm-2 control-label">Judul</label>
+                              <div class="col-sm-10">
                                   <input type="text" class="form-control" name="judul_artikel" id="judul_artikel" value="" placeholder="judul artikel">
                               </div>
                           </div>
@@ -88,7 +88,7 @@ include 'koneksi.php';
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Isi Artikel</label>
                               <div class="col-sm-10">
-                                  <textarea class="form-control" name="isi_artikel" id="isi_artikel" placeholder="isi artikel"></textarea>
+                                  <textarea class="form-control" rows="10" name="isi_artikel" id="isi_artikel" placeholder="isi artikel"></textarea>
                               </div>
                           </div>
 
