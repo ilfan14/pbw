@@ -16,7 +16,7 @@ include 'koneksi.php';
     <title>Buat Artikel</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <!-- <link rel="stylesheet" type="text/css" href="assets/datepicker/css/bootstrap-datepicker.css" /> -->
@@ -60,22 +60,9 @@ include 'koneksi.php';
                       <h4 class="mb"><i class="fa fa-angle-right"></i> Buat  Artikel</h4>
                       <form class="form-horizontal style-form" action="add_article.php" method="POST" accept-charset="utf-8" enctype="multipart/form-data">
 
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Judul Artikel</label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="judul_artikel" id="judul_artikel" value="" placeholder="judul artikel">
-                              </div>
-                          </div>
-
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Isi Artikel</label>
-                              <div class="col-sm-10">
-                                  <textarea class="form-control" name="isi_artikel" id="isi_artikel" placeholder="isi artikel"></textarea>
-                              </div>
-                          </div>
-
-                          <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Kategori Artikel</label>
+                          <div class="col-lg-12">
+                          <div class="">
+                            <label class="col-sm-1 col-sm-1 control-label">Kategori Artikel</label>
                               <div class="col-sm-4">
                               <select class="form-control" name="kategori_artikel">
                                 <option value="">PILIH KATEGORI</option>
@@ -88,6 +75,24 @@ include 'koneksi.php';
                               </select>
                               </div>
                           </div>
+
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Judul Artikel</label>
+                              <div class="col-sm-5">
+                                  <input type="text" class="form-control" name="judul_artikel" id="judul_artikel" value="" placeholder="judul artikel">
+                              </div>
+                          </div>
+
+                          </div>
+
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Isi Artikel</label>
+                              <div class="col-sm-10">
+                                  <textarea class="form-control" name="isi_artikel" id="isi_artikel" placeholder="isi artikel"></textarea>
+                              </div>
+                          </div>
+
+
 
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Gambar Artikel</label>
@@ -161,12 +166,12 @@ include 'koneksi.php';
   </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="assets/bootstrap/jquery.min.js"></script>
+    <script src="assets/js/jquery.js"></script>
   <!-- <script type="text/javascript" src="assets/datepicker/js/bootstrap-datepicker.js"></script> -->
   <!-- <script type="text/javascript" src="assets/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js"></script> -->
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- <script type="text/javascript">
+    <script src="assets/js/bootstrap.min.js"></script>
+<!--
+    <script type="text/javascript">
                     $(".form_datetime").datetimepicker({
                         format: "dd MM yyyy - hh:ii",
                         autoclose: true,
