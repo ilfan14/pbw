@@ -61,7 +61,9 @@ $data = $r->fetch_array();
               <div class="col-lg-12">
                   <div class="form-panel">
                       <h4 class="mb"><i class="fa fa-angle-right"></i> Buat  Artikel</h4>
-                      <form class="form-horizontal style-form" action="add_article.php" method="POST" accept-charset="utf-8" enctype="multipart/form-data">
+                      <form class="form-horizontal style-form" action="update_article.php" method="POST" accept-charset="utf-8" enctype="multipart/form-data">
+
+                      <input type="hidden" name="id" id="input_id" value="<?php echo $data['id_berita'] ?>" placeholder="">
 
                           <div class="col-lg-12 form-group">
                           <div class="">
