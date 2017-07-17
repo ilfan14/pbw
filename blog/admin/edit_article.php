@@ -72,7 +72,11 @@ $data = $r->fetch_array();
                                 <?php
                                   $kategori=mysqli_query($connection, "SELECT * FROM tabel_kategori");
                                   while ($r=mysqli_fetch_array($kategori)) {
-                                    echo "<option value=$r[id_kategori] > $r[kategori]</option>";
+                                    if ($data[id_kategori] == $r[id_kategori]){
+                                      echo "<option value=$r[id_kategori] selected> $r[kategori]</option>";
+                                    } else {
+                                      echo "<option value=$r[id_kategori] > $r[kategori]</option>";
+                                    }
                                   }
                                 ?>
                               </select>
