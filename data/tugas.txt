@@ -1,2 +1,0 @@
-1.) Buat fitur pengecekan username ketika tambah user.
-2.) Buat form login 3 hal ( username tidak tersedia lanjutkan registrasi, Username ada tapi password salah lanjutkan ke forget password, username ada dan password benar lanjutka ke page login sukses) 
