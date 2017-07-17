@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include 'koneksi.php';
 
@@ -16,12 +16,13 @@ include 'koneksi.php';
     <title>Buat Artikel</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!--external css-->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-datepicker/css/datepicker.css" />
-    <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-daterangepicker/daterangepicker.css" />
-        
+    <!-- <link rel="stylesheet" type="text/css" href="assets/datepicker/css/bootstrap-datepicker.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="assets/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-daterangepicker/daterangepicker.css" /> -->
+
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
@@ -39,7 +40,7 @@ include 'koneksi.php';
       <?php
         include "header.php";
       ?>
-      
+
       <?php
         include "sidebar.php";
       ?>
@@ -50,64 +51,100 @@ include 'koneksi.php';
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> Buat Artikel</h3>
-          	
-          	<!-- BASIC FORM ELELEMNTS -->
-          	<div class="row mt">
-          		<div class="col-lg-12">
+            <h3><i class="fa fa-angle-right"></i> Buat Artikel</h3>
+
+            <!-- BASIC FORM ELELEMNTS -->
+            <div class="row mt">
+              <div class="col-lg-12">
                   <div class="form-panel">
-                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> Buat	 Artikel</h4>
-                      <form class="form-horizontal style-form" action="add_article.php" method="POST" accept-charset="utf-8">
-	                        <div class="form-group">
-	                            <label class="col-sm-2 col-sm-2 control-label">Judul Artikel</label>
-	                            <div class="col-sm-10">
-	                                <input type="text" class="form-control" name="judul_artikel" value="">
-	                            </div>
-	                        </div>
-	                   		<div class="form-group">
-	                            <label class="col-sm-2 col-sm-2 control-label">Isi Artikel</label>
-	                            <div class="col-sm-10">
-	                                <textarea class="form-control" name="isi_artikel" ></textarea>
-	                            </div>
-	                        </div>
+                      <h4 class="mb"><i class="fa fa-angle-right"></i> Buat  Artikel</h4>
+                      <form class="form-horizontal style-form" action="add_article.php" method="POST" accept-charset="utf-8" enctype="multipart/form-data">
 
-	                        <div class="form-group">
-	                        	<label class="col-sm-2 col-sm-2 control-label">Kategori Artikel</label>
-	                            <div class="col-sm-4">
-		                        	<select class="form-control" name="kategori_artikel">
-									<?php
-										$kategori=mysqli_query($connection, "SELECT * FROM tabel_kategori");
-										while ($r=mysqli_fetch_array($kategori)) {
-											echo "<option value=$r[id_kategori]> $r[kategori]</option>";
-										}
-									?>
-									</select>
-								</div>
-								
-								
-	                        </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Judul Artikel</label>
+                              <div class="col-sm-10">
+                                  <input type="text" class="form-control" name="judul_artikel" id="judul_artikel" value="" placeholder="judul artikel">
+                              </div>
+                          </div>
 
-							<div class="form-group">
-	                            <label class="col-sm-2 col-sm-2 control-label">Penulis Artikel</label>
-	                            <div class="col-sm-10">
-	                                <input class="form-control" name="penulis_artikel">
-	                            </div>
-	                        </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Isi Artikel</label>
+                              <div class="col-sm-10">
+                                  <textarea class="form-control" name="isi_artikel" id="isi_artikel" placeholder="isi artikel"></textarea>
+                              </div>
+                          </div>
 
-	                        <div style="margin-left: 83%;">
-									<button type="submit" class="btn btn-success">Tambah</button>
-		                    		<button type="button" class="btn btn-danger">Batal</button>
-							</div>
-		                    
+                          <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Kategori Artikel</label>
+                              <div class="col-sm-4">
+                              <select class="form-control" name="kategori_artikel">
+                                <option value="">PILIH KATEGORI</option>
+                                <?php
+                                  $kategori=mysqli_query($connection, "SELECT * FROM tbl_kategori");
+                                  while ($r=mysqli_fetch_array($kategori)) {
+                                    echo "<option value=$r[id_kategori]> $r[kategori]</option>";
+                                  }
+                                ?>
+                              </select>
+                              </div>
+                          </div>
 
-		                    <!-- <input type="submit" id="bsubmit" name="" value="SIMPAN" > -->
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Gambar Artikel</label>
+                              <div class="col-sm-10">
+                                  <input type="file" class="#" name="foto" id="foto" value="">
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Penulis</label>
+                              <div class="col-sm-10">
+                                  <input type="text" class="form-control" name="penulis" id="penulis" value="" placeholder="penulis">
+                              </div>
+                          </div>
+
+                          <!-- <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Tanggal & Waktu</label>
+                              <div class="col-sm-4">
+                                      <div class="input-append date input-group date">
+                                          <input class="form-control form_datetime" type="text" name="tanggal" value="" placeholder="tanggal & waktu">
+                                          <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                                      </div>
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Hari</label>
+                              <div class="col-sm-4">
+                              <select class="form-control" name="hari">
+                                    <option value="">Plih Hari</option>
+                                    <option value="Senin">Senin</option>
+                                    <option value="Selasa">Selasa</option>
+                                    <option value="Rabu">Rabu</option>
+                                    <option value="Kamis">Kamis</option>
+                                    <option value="Jum'at">Jum'at</option>
+                                    <option value="Sabtu">Sabtu</option>
+                                    <option value="Minggu">Minggu</option>
+                                  </select>
+                              </div>
+                          </div> -->
+
+
+
+                          <div style="margin-left: 83%;">
+                  <button type="submit" class="btn btn-success">Tambah</button>
+                            <button type="button" class="btn btn-danger">Batal</button>
+              </div>
+
+
+                        <!-- <input type="submit" id="bsubmit" name="" value="SIMPAN" > -->
 
                       </form>
                   </div>
-          		</div><!-- col-lg-12-->      	
-          	</div><!-- /row -->
-          	
-		</section><! --/wrapper -->
+              </div><!-- col-lg-12-->
+            </div><!-- /row -->
+
+    </section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
@@ -124,9 +161,20 @@ include 'koneksi.php';
   </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/bootstrap/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="assets/datepicker/js/bootstrap-datepicker.js"></script> -->
+  <!-- <script type="text/javascript" src="assets/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js"></script> -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- <script type="text/javascript">
+                    $(".form_datetime").datetimepicker({
+                        format: "dd MM yyyy - hh:ii",
+                        autoclose: true,
+                        todayBtn: true,
+                        pickerPosition: "top-right"
+                    });
+  </script> -->
+    <!-- <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script> -->
     <script src="assets/js/jquery.scrollTo.min.js"></script>
     <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
 
@@ -135,27 +183,25 @@ include 'koneksi.php';
     <script src="assets/js/common-scripts.js"></script>
 
     <!--script for this page-->
-    <script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <!-- <script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script> -->
 
-	<!--custom switch-->
-	<script src="assets/js/bootstrap-switch.js"></script>
-	
-	<!--custom tagsinput-->
-	<script src="assets/js/jquery.tagsinput.js"></script>
-	
-	<!--custom checkbox & radio-->
-	
-	<script type="text/javascript" src="assets/js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-	<script type="text/javascript" src="assets/js/bootstrap-daterangepicker/date.js"></script>
-	<script type="text/javascript" src="assets/js/bootstrap-daterangepicker/daterangepicker.js"></script>
-	
-	<script type="text/javascript" src="assets/js/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
-	
-	
-	<script src="assets/js/form-component.js"></script>    
-    
-    
-  <script>
+  <!--custom switch-->
+  <!-- <script src="assets/js/bootstrap-switch.js"></script> -->
+
+  <!--custom tagsinput-->
+  <!-- <script src="assets/js/jquery.tagsinput.js"></script> -->
+
+  <!--custom checkbox & radio-->
+
+  <!-- <script type="text/javascript" src="assets/js/bootstrap-daterangepicker/date.js"></script> -->
+  <!-- <script type="text/javascript" src="assets/js/bootstrap-daterangepicker/daterangepicker.js"></script> -->
+
+  <!-- <script type="text/javascript" src="assets/js/bootstrap-inputmask/bootstrap-inputmask.min.js"></script> -->
+
+
+  <!-- <script src="assets/js/form-component.js"></script> -->
+
+  <!-- script>
       //custom select box
 
       $(function(){
@@ -163,6 +209,6 @@ include 'koneksi.php';
       });
 
   </script>
-
+ -->
   </body>
 </html>
