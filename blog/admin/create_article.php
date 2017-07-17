@@ -67,7 +67,7 @@ include 'koneksi.php';
                               <select class="form-control" name="kategori_artikel">
                                 <option value="">PILIH KATEGORI</option>
                                 <?php
-                                  $kategori=mysqli_query($connection, "SELECT * FROM tbl_kategori");
+                                  $kategori=mysqli_query($connection, "SELECT * FROM tabel_kategori");
                                   while ($r=mysqli_fetch_array($kategori)) {
                                     echo "<option value=$r[id_kategori]> $r[kategori]</option>";
                                   }
