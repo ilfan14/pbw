@@ -179,7 +179,7 @@ include 'koneksi.php';
                         pickerPosition: "top-right"
                     });
   </script> -->
-    <!-- <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script> -->
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
     <script src="assets/js/jquery.scrollTo.min.js"></script>
     <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
 
@@ -206,14 +206,14 @@ include 'koneksi.php';
 
   <!-- <script src="assets/js/form-component.js"></script> -->
 
-  <!-- script>
+ <!--  <script>
       //custom select box
 
       $(function(){
           $('select.styled').customSelect();
       });
 
-  </script>
- -->
+  </script> -->
+
   </body>
 </html>
