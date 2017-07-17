@@ -16,7 +16,7 @@ $data = $r->fetch_array();
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Buat Artikel</title>
+    <title>Ubah Artikel</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -147,8 +147,8 @@ $data = $r->fetch_array();
 
 
                           <div style="margin-left: 83%;">
-                  <button type="submit" class="btn btn-success">Tambah</button>
-                            <button type="button" class="btn btn-danger">Batal</button>
+                  <button type="submit" class="btn btn-success">Ubah</button>
+                  <a href="list_article.php"><button type="button" class="btn btn-danger">Batal</button></a>
               </div>
 
 

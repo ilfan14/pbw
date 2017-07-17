@@ -138,7 +138,7 @@ include 'koneksi.php';
 
                           <div style="margin-left: 83%;">
                   <button type="submit" class="btn btn-success">Tambah</button>
-                            <button type="button" class="btn btn-danger">Batal</button>
+                  <a href="list_article.php"><button type="button" class="btn btn-danger">Batal</button></a>
               </div>
 
 

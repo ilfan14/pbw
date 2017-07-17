@@ -76,7 +76,7 @@ include 'koneksi.php';
                     echo "<td> $r[kategori] </td>";
                     echo "<td> $r[tanggal] </td>";
                     echo "<td> <a href=edit_article.php?id=$r[id_berita]><button type=button class=btn btn-info>Edit</button></a> |
-                        <a href=\"hapus_article.php?id=$r[id_berita]\"
+                        <a href=\"delete_article.php?id=$r[id_berita]\"
                         onclick=\"return confirm('Anda yakin akan menghapus $r[judul_berita]?')\"><button type=button class=btn btn-warning>Hapus</button></a> </td> </tr>";
                   }
                 ?>

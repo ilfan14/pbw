@@ -49,8 +49,7 @@
     }
 
     if ($connection->query($sql) === TRUE) {
-        echo $sql;
-        // header("location:edit_article.php");
+        header("location:list_article.php");
         } else {
             echo "Error: " . $sql . "<br>" . $connection->error;
         }

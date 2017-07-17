@@ -5,9 +5,6 @@
     $kategori_artikel = $_POST['kategori_artikel'];
     $isi_artikel = $_POST['isi_artikel'];
     $penulis = $_POST['penulis'];
-    //$hari = $_POST['hari'];
-    //$tanggal = $_POST['tanggal'];
-    //$jam = $_POST['jam'];
 
     //get date now
     $date = new DateTime('now', new DateTimeZone('Asia/Jakarta'));
@@ -48,7 +45,7 @@
     $sql = "INSERT INTO tabel_berita (judul_berita, id_kategori, isi_berita, gbr_berita, penulis, hari, tanggal, jam) VALUES ('$judul_berita','$kategori_artikel','$isi_artikel','$nama_gmb','$penulis','$hari','$tanggal','$jam')";
 
     if ($connection->query($sql) === TRUE) {
-        header("location:create_article.php");
+        header("location:list_article.php");
         } else {
             echo "Error: " . $sql . "<br>" . $connection->error;
         }
