@@ -1,7 +1,10 @@
 <?php
 
 include 'koneksi.php';
-
+$id=$_GET['id'];
+$sql="SELECT * FROM tabel_berita WHERE id_berita='$id'";
+$r = $connection->query($sql);
+$data = $r->fetch_array();
 ?>
 
 <!DOCTYPE html>
@@ -69,7 +72,7 @@ include 'koneksi.php';
                                 <?php
                                   $kategori=mysqli_query($connection, "SELECT * FROM tabel_kategori");
                                   while ($r=mysqli_fetch_array($kategori)) {
-                                    echo "<option value=$r[id_kategori]> $r[kategori]</option>";
+                                    echo "<option value=$r[id_kategori] > $r[kategori]</option>";
                                   }
                                 ?>
                               </select>
@@ -79,16 +82,17 @@ include 'koneksi.php';
                           <div class="" style="float:right;">
                               <label class="col-sm-2 col-sm-2 control-label">Judul</label>
                               <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="judul_artikel" id="judul_artikel" value="" placeholder="judul artikel">
+                                  <input type="text" class="form-control" name="judul_artikel" id="judul_artikel" value="<?php echo $data['judul_berita']; ?>" placeholder="judul artikel">
                               </div>
                           </div>
 
                           </div>
 
+
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Isi Artikel</label>
                               <div class="col-sm-10">
-                                  <textarea class="form-control" rows="10" name="isi_artikel" id="isi_artikel" placeholder="isi artikel" style="resize: none"></textarea>
+                                  <textarea class="form-control" rows="10" name="isi_artikel" id="isi_artikel" placeholder="isi artikel" style="resize: none"><?php echo $data['isi_berita']; ?></textarea>
                               </div>
                           </div>
 
@@ -104,7 +108,7 @@ include 'koneksi.php';
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Penulis</label>
                               <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="penulis" id="penulis" value="" placeholder="penulis">
+                                  <input type="text" class="form-control" name="penulis" id="penulis" value="<?php echo $data['penulis']; ?>" placeholder="penulis">
                               </div>
                           </div>
 
@@ -154,9 +158,14 @@ include 'koneksi.php';
 
       <!--main content end-->
       <!--footer start-->
-      <?php
-        include "footer.php";
-      ?>
+      <footer class="site-footer">
+          <div class="text-center">
+              2017 Hak Cipta Tuhan Yang maha Esa
+              <a href="create_article.php#" class="go-top">
+                  <i class="fa fa-angle-up"></i>
+              </a>
+          </div>
+      </footer>
       <!--footer end-->
   </section>
 
