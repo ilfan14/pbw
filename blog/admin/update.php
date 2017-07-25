@@ -1,6 +1,7 @@
 <?php
-    include 'koneksi.php';
-
+include 'koneksi.php';
+if ($_GET['jenis'] == "artikel") {
+    $id=$_POST['id'];
     $judul_berita = $_POST['judul_artikel'];
     $kategori_artikel = $_POST['kategori_artikel'];
     $isi_artikel = $_POST['isi_artikel'];
@@ -31,7 +32,7 @@
     );
     $hari = $dayList[$day];
 
-
+    if ($_FILES['foto']['name']!='') {
     $dir_upload='assets/gambar/';
     $nama_gmb=$_FILES['foto']['name'];
     //tambahkan info foto
@@ -42,7 +43,10 @@
     is_uploaded_file($_FILES['foto']['tmp_name']);
     move_uploaded_file($_FILES['foto']['tmp_name'], $dir_upload.$nama_gmb);
 
-    $sql = "INSERT INTO tabel_berita (judul_berita, id_kategori, isi_berita, gbr_berita, penulis, hari, tanggal, jam) VALUES ('$judul_berita','$kategori_artikel','$isi_artikel','$nama_gmb','$penulis','$hari','$tanggal','$jam')";
+    $sql = "UPDATE tabel_berita SET judul_berita='$judul_berita', id_kategori='$kategori_artikel', isi_berita='$isi_artikel', gbr_berita='$nama_gmb', penulis='$penulis', hari='$hari', tanggal='$tanggal', jam='$jam' WHERE id_berita='$id'";
+    }else{
+        $sql = "UPDATE tabel_berita SET judul_berita='$judul_berita', id_kategori='$kategori_artikel', isi_berita='$isi_artikel', penulis='$penulis', hari='$hari', tanggal='$tanggal', jam='$jam' WHERE id_berita='$id'";
+    }
 
     if ($connection->query($sql) === TRUE) {
         header("location:list_article.php");
@@ -50,5 +54,20 @@
             echo "Error: " . $sql . "<br>" . $connection->error;
         }
 
+} else if ($_GET['jenis'] == "kategori") {
+    $nama_kategori = $_POST['nama_kategori'];
+    $id_kategori = $_POST['id_kategori'];
 
+    $sql = "UPDATE tabel_kategori SET kategori='$nama_kategori' WHERE id_kategori='$id_kategori'";
+    
+    if ($connection->query($sql) === TRUE) {
+        header("location:list_kategori.php");
+    } else {
+            echo "Error: " . $sql . "<br>" . $connection->error;
+    }
+
+} else {
+    echo "Wrong";
+}
+    
  ?>

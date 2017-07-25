@@ -45,39 +45,31 @@ include 'koneksi.php';
       <!--main content start-->
       <section id="main-content">
         <section class="wrapper">
-         <h3><i class="fa fa-angle-right"></i> Basic Table Examples</h3>
          <div class="row">
 
            <div class="col-md-12">
             <div class="content-panel">
-             <h4><i class="fa fa-angle-right"></i> Basic Table</h4>
+             <h4><i class="fa fa-angle-right"></i> Tabel Kategori</h4>
              <hr>
              <table class="table">
               <thead>
                 <tr>
                   <th>No.</th>
-                  <th>Judul Artikel</th>
-                  <th>Penulis</th>
-                  <th>Kategori</th>
-                  <th>Tanggal</th>
-                  <th>Action</th>
+                  <th>Nama Kategori</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
-                  $kategori=mysqli_query($connection, "SELECT tabel_berita.*, tabel_kategori.kategori FROM tabel_berita INNER JOIN tabel_kategori ON tabel_kategori.id_kategori = tabel_berita.id_kategori");
+                  $kategori=mysqli_query($connection, "SELECT * FROM tabel_kategori");
                   $nomor = null;
                   while ($r=mysqli_fetch_array($kategori)) {
                     $nomor += 1;
                     echo "<tr> <td>";
                     echo $nomor;
-                    echo "</td> <td> $r[judul_berita] </td>";
-                    echo "<td> $r[penulis] </td>";
-                    echo "<td> $r[kategori] </td>";
-                    echo "<td> $r[tanggal] </td>";
-                    echo "<td> <a href=edit_article.php?id=$r[id_berita]><button type=button class=btn btn-info>Edit</button></a> |
-                        <a href=\"delete.php?jenis=artikel&id=$r[id_berita]\"
-                        onclick=\"return confirm('Anda yakin akan menghapus $r[judul_berita]?')\"><button type=button class=btn btn-warning>Hapus</button></a> </td> </tr>";
+                    echo "</td> <td> $r[kategori] </td>";
+                    echo "<td> <a href=edit_kategori.php?id=$r[id_kategori]><button type=button class=btn btn-info>Edit</button></a> |
+                        <a href=\"delete.php?jenis=kategori&id=$r[id_kategori]\"
+                        onclick=\"return confirm('Anda yakin akan menghapus $r[kategori]?')\"><button type=button class=btn btn-warning>Hapus</button></a> </td> </tr>";
                   }
                 ?>
               </tbody>
