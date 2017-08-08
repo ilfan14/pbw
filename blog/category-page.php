@@ -1,3 +1,7 @@
+<?php
+    include 'koneksi.php';
+    $id=$_GET['id'];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,10 +14,18 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 hot-movies">
-                            <h1>Hot Movies</h1><span class="garis"></span>
 
                             <?php 
-                                $artikeldepan=mysqli_query($connection, "SELECT * FROM tabel_berita WHERE status=1 LIMIT 6 ");
+                                $namakategori=mysqli_query($connection, "SELECT * FROM tabel_kategori WHERE id_kategori=$id ");
+                                while ($r=mysqli_fetch_array($namakategori)) {
+                                    echo "<h1>$r[kategori]</h1><span class=garis></span>";
+
+                                    
+                                }
+                            ?>
+
+                            <?php 
+                                $artikeldepan=mysqli_query($connection, "SELECT * FROM tabel_berita WHERE status=1 AND id_kategori=$id LIMIT 6 ");
                                 while ($r=mysqli_fetch_array($artikeldepan)) {
                                     echo "<a href=single-page.php?id=$r[id_berita] class='col-xs-4 col-sm-4 col-md-4 col-lg-4 kolom'>";
                                     echo "<img src=images/$r[gbr_berita] alt=''>";
@@ -24,7 +36,6 @@
 
                             
                         </div>
-                        <center><a href="all-movie.php"><button type="button" class="btn btn-success">More</button></a></center>
                     </div>
                 </div>
                 <?php 

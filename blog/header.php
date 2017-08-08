@@ -67,24 +67,15 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle padding" data-toggle="dropdown">Genre <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="morepage-action.html">Action</a></li>
-                                    <li><a href="morepage-romance.html">Romance</a></li>
+                                <?php 
+                                    $listkategori=mysqli_query($connection, "SELECT * FROM tabel_kategori");
+                                    while ($r=mysqli_fetch_array($listkategori)) {
+                                        echo "<li><a href=category-page.php?id=$r[id_kategori]> $r[kategori]</a></li>";
+                                    }
+                                 ?>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle padding" data-toggle="dropdown">Country <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="morepage-amerika.html">Amerika</a></li>
-                                    <li><a href="morepage-korea.html">Korea</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle padding" data-toggle="dropdown">Year <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="morepage-2016.html">2016</a></li>
-                                    <li><a href="morepage-2015.html">2015</a></li>
-                                </ul>
-                            </li>
+                            
                             <li><a href="#footer" class="padding">About</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
