@@ -58,31 +58,48 @@ include 'cek_session.php'; ?>
                   	<div class="row mtbox">
                   		<div class="col-md-2 col-sm-2 col-md-offset-1 box0">
                   			<div class="box1">
-					  			<span class="li_heart"></span>
-					  			<h3>933</h3>
-                  			</div>
-					  			<p>933 People liked your page the last 24hs. Whoohoo!</p>
-                  		</div>
-                  		<div class="col-md-2 col-sm-2 box0">
-                  			<div class="box1">
+					  		
 					  			<span class="li_cloud"></span>
-					  			<h3>+48</h3>
-                  			</div>
-					  			<p>48 New files were added in your cloud storage.</p>
+
+                  <?php  
+
+                    $jumlahvisit=mysqli_query($connection, "SELECT SUM(dibaca) as jumlah FROM tabel_berita");
+                    while ($r=mysqli_fetch_array($jumlahvisit)) {
+                      echo "<h3>$r[jumlah]</h3></div><p>$r[jumlah] Visitor</p>";
+                    }
+
+                  ?>
+					  			
+
+
                   		</div>
                   		<div class="col-md-2 col-sm-2 box0">
                   			<div class="box1">
 					  			<span class="li_stack"></span>
-					  			<h3>23</h3>
-                  			</div>
-					  			<p>You have 23 unread messages in your inbox.</p>
+
+                  <?php  
+
+                    $jumlahcommant=mysqli_query($connection, "SELECT count(id) as jkomen FROM tabel_komentar");
+                    while ($r=mysqli_fetch_array($jumlahcommant)) {
+                      echo "<h3>$r[jkomen]</h3></div><p>$r[jkomen] Komentar</p>";
+                    }
+
+                  ?>
+					  			
                   		</div>
                   		<div class="col-md-2 col-sm-2 box0">
                   			<div class="box1">
 					  			<span class="li_news"></span>
-					  			<h3>+10</h3>
-                  			</div>
-					  			<p>More than 10 news were added in your reader.</p>
+
+                  <?php  
+
+                    $jumlahartikel=mysqli_query($connection, "SELECT count(id_berita) as jartikel FROM tabel_berita");
+                    while ($r=mysqli_fetch_array($jumlahartikel)) {
+                      echo "<h3>$r[jartikel]</h3></div><p>$r[jartikel] Artikel</p>";
+                    }
+
+                  ?>
+
                   		</div>
                   		<div class="col-md-2 col-sm-2 box0">
                   			<div class="box1">
@@ -149,17 +166,25 @@ include 'cek_session.php'; ?>
 									<h5>TOP USER</h5>
 								</div>
 								<p><img src="assets/img/ui-zac.jpg" class="img-circle" width="80"></p>
-								<p><b>Zac Snider</b></p>
-								<div class="row">
-									<div class="col-md-6">
-										<p class="small mt">MEMBER SINCE</p>
-										<p>2012</p>
-									</div>
-									<div class="col-md-6">
-										<p class="small mt">TOTAL SPEND</p>
-										<p>$ 47,60</p>
-									</div>
-								</div>
+
+
+                <?php  
+
+                    $topuser=mysqli_query($connection, "SELECT count(penulis) AS jartikel,tabel_berita.penulis FROM `tabel_berita` GROUP BY penulis ORDER BY jartikel DESC LIMIT 1");
+                    while ($r=mysqli_fetch_array($topuser)) {
+
+                      echo "<p><b>$r[penulis]</b></p>";
+                      echo "<div class='row'><div class='col-md-12'><p class='small mt'>TOTAL ARTIKEL</p><p>$r[jartikel]</p></div></div>";
+
+
+                    }
+
+                ?>
+
+                
+
+
+								
 							</div>
 						</div><!-- /col-md-4 -->
 
