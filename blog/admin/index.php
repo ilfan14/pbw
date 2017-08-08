@@ -1,3 +1,6 @@
+<?php
+include '../koneksi.php';
+include 'cek_session.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,14 +18,14 @@
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
     <link rel="stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" />
-    <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">    
-    
+    <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">
+
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
     <script src="assets/js/chart-master/Chart.js"></script>
-    
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -33,15 +36,15 @@
   <body>
 
   <section id="container" >
-      
+
       <?php
         include "header.php";
       ?>
-      
+
       <?php
         include "sidebar.php";
       ?>
-      
+
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
@@ -51,7 +54,7 @@
 
               <div class="row">
                   <div class="col-lg-9 main-chart">
-                  
+
                   	<div class="row mtbox">
                   		<div class="col-md-2 col-sm-2 col-md-offset-1 box0">
                   			<div class="box1">
@@ -88,10 +91,10 @@
                   			</div>
 					  			<p>Your server is working perfectly. Relax & enjoy.</p>
                   		</div>
-                  	
-                  	</div><!-- /row mt -->	
-                  
-                      
+
+                  	</div><!-- /row mt -->
+
+
                       <div class="row mt">
                       <!-- SERVER STATUS PANELS -->
                       	<div class="col-md-4 col-sm-4 mb">
@@ -120,7 +123,7 @@
 								</script>
 	                      	</div><! --/grey-panel -->
                       	</div><!-- /col-md-4-->
-                      	
+
 
                       	<div class="col-md-4 col-sm-4 mb">
                       		<div class="white-panel pn">
@@ -138,7 +141,7 @@
 	                      		</div>
                       		</div>
                       	</div><!-- /col-md-4 -->
-                      	
+
 						<div class="col-md-4 mb">
 							<!-- WHITE PANEL - TOP USER -->
 							<div class="white-panel pn">
@@ -159,11 +162,11 @@
 								</div>
 							</div>
 						</div><!-- /col-md-4 -->
-                      	
+
 
                     </div><!-- /row -->
-                    
-                    				
+
+
 					<div class="row">
 						<!-- TWITTER PANEL -->
 						<div class="col-md-4 mb">
@@ -196,8 +199,8 @@
 								</footer>
                       		</div><! -- /darkblue panel -->
 						</div><!-- /col-md-4 -->
-						
-						
+
+
 						<div class="col-md-4 mb">
 							<!-- INSTAGRAM PANEL -->
 							<div class="instagram-panel pn">
@@ -208,7 +211,7 @@
 								<p><i class="fa fa-comment"></i> 18 | <i class="fa fa-heart"></i> 49</p>
 							</div>
 						</div><!-- /col-md-4 -->
-						
+
 						<div class="col-md-4 col-sm-4 mb">
 							<!-- REVENUE PANEL -->
 							<div class="darkblue-panel pn">
@@ -221,9 +224,9 @@
 								<p class="mt"><b>$ 17,980</b><br/>Month Income</p>
 							</div>
 						</div><!-- /col-md-4 -->
-						
+
 					</div><!-- /row -->
-					
+
 					<div class="row mt">
                       <!--CUSTOM CHART START -->
                       <div class="border-head">
@@ -268,19 +271,19 @@
                           </div>
                       </div>
                       <!--custom chart end-->
-					</div><!-- /row -->	
-					
+					</div><!-- /row -->
+
                   </div><!-- /col-lg-9 END SECTION MIDDLE -->
-                  
-                  
+
+
       <!-- **********************************************************************************************************************************************************
       RIGHT SIDEBAR CONTENT
-      *********************************************************************************************************************************************************** -->                  
-                  
+      *********************************************************************************************************************************************************** -->
+
                   <div class="col-lg-3 ds">
                     <!--COMPLETED ACTIONS DONUTS CHART-->
 						<h3>NOTIFICATIONS</h3>
-                                        
+
                       <!-- First Action -->
                       <div class="desc">
                       	<div class="thumb">
@@ -342,44 +345,44 @@
                       <!-- First Member -->
                       <div class="desc">
                       	<div class="thumb">
-                      		<img class="img-circle" src="assets/img/ui-divya.jpg" width="35px" height="35px" align="">
+                      		<img class="img-circle" src="assets/img/minion.jpg" width="35px" height="35px" align="">
                       	</div>
                       	<div class="details">
-                      		<p><a href="#">DIVYA MANIAN</a><br/>
-                      		   <muted>Available</muted>
+                      		<p><a href="#">Desy Minion</a><br/>
+                      		   <muted>Ba Na Na !!!!</muted>
                       		</p>
                       	</div>
                       </div>
                       <!-- Second Member -->
                       <div class="desc">
                       	<div class="thumb">
-                      		<img class="img-circle" src="assets/img/ui-sherman.jpg" width="35px" height="35px" align="">
+                      		<img class="img-circle" src="assets/img/flash.jpg" width="35px" height="35px" align="">
                       	</div>
                       	<div class="details">
-                      		<p><a href="#">DJ SHERMAN</a><br/>
-                      		   <muted>I am Busy</muted>
+                      		<p><a href="#">Antonius The Flash</a><br/>
+                      		   <muted>Ha... Ha.... Ha...... !</muted>
                       		</p>
                       	</div>
                       </div>
                       <!-- Third Member -->
                       <div class="desc">
                       	<div class="thumb">
-                      		<img class="img-circle" src="assets/img/ui-danro.jpg" width="35px" height="35px" align="">
+                      		<img class="img-circle" src="assets/img/ma'il.jpeg" width="35px" height="35px" align="">
                       	</div>
                       	<div class="details">
-                      		<p><a href="#">DAN ROGERS</a><br/>
-                      		   <muted>Available</muted>
+                      		<p><a href="#">Ilfan Ma'il</a><br/>
+                      		   <muted>Seikat 2 ringgit</muted>
                       		</p>
                       	</div>
                       </div>
                       <!-- Fourth Member -->
                       <div class="desc">
                       	<div class="thumb">
-                      		<img class="img-circle" src="assets/img/ui-zac.jpg" width="35px" height="35px" align="">
+                      		<img class="img-circle" src="assets/img/big boos.jpg" width="35px" height="35px" align="">
                       	</div>
                       	<div class="details">
-                      		<p><a href="#">Zac Sniders</a><br/>
-                      		   <muted>Available</muted>
+                      		<p><a href="#">Maulana Big Boss</a><br/>
+                      		   <muted>Tenggelamkan !</muted>
                       		</p>
                       	</div>
                       </div>
@@ -389,8 +392,8 @@
                       		<img class="img-circle" src="assets/img/ui-sam.jpg" width="35px" height="35px" align="">
                       	</div>
                       	<div class="details">
-                      		<p><a href="#">Marcel Newman</a><br/>
-                      		   <muted>Available</muted>
+                      		<p><a href="#">Rendy :D</a><br/>
+                      		   <muted>Shadow</muted>
                       		</p>
                       	</div>
                       </div>
@@ -408,7 +411,7 @@
                                 </div>
                             </div>
                         </div><!-- / calendar -->
-                      
+
                   </div><!-- /col-lg-3 -->
               </div><! --/row -->
           </section>
@@ -439,14 +442,14 @@
 
     <!--common script for all pages-->
     <script src="assets/js/common-scripts.js"></script>
-    
+
     <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
     <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
 
     <!--script for this page-->
-    <script src="assets/js/sparkline-chart.js"></script>    
-	<script src="assets/js/zabuto_calendar.js"></script>	
-	
+    <script src="assets/js/sparkline-chart.js"></script>
+	<script src="assets/js/zabuto_calendar.js"></script>
+
 	<script type="text/javascript">
         $(document).ready(function () {
         var unique_id = $.gritter.add({
@@ -467,7 +470,7 @@
         return false;
         });
 	</script>
-	
+
 	<script type="application/javascript">
         $(document).ready(function () {
             $("#date-popover").popover({html: true, trigger: "manual"});
@@ -475,7 +478,7 @@
             $("#date-popover").click(function (e) {
                 $(this).hide();
             });
-        
+
             $("#my-calendar").zabuto_calendar({
                 action: function () {
                     return myDateFunction(this.id, false);
@@ -493,8 +496,8 @@
                 ]
             });
         });
-        
-        
+
+
         function myNavFunction(id) {
             $("#date-popover").hide();
             var nav = $("#" + id).data("navigation");
@@ -502,7 +505,7 @@
             console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
         }
     </script>
-  
+
 
   </body>
 </html>

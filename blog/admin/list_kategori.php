@@ -1,8 +1,6 @@
 <?php
-
 include 'koneksi.php';
-
-?>
+include 'cek_session.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">

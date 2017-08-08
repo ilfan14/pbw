@@ -1,6 +1,6 @@
 <?php
-
 include 'koneksi.php';
+include 'cek_session.php';
 $id=$_GET['id'];
 $sql="SELECT * FROM tabel_berita WHERE id_berita='$id'";
 $r = $connection->query($sql);
@@ -54,13 +54,13 @@ $data = $r->fetch_array();
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
-            <h3><i class="fa fa-angle-right"></i> Buat Artikel</h3>
+            <h3><i class="fa fa-angle-right"></i> Ubah Artikel</h3>
 
             <!-- BASIC FORM ELELEMNTS -->
             <div class="row mt">
               <div class="col-lg-12">
                   <div class="form-panel">
-                      <h4 class="mb"><i class="fa fa-angle-right"></i> Buat  Artikel</h4>
+                      <h4 class="mb"><i class="fa fa-angle-right"></i> Ubah  Artikel</h4>
                       <form class="form-horizontal style-form" action="update.php?jenis=artikel" method="POST" accept-charset="utf-8" enctype="multipart/form-data">
 
                       <input type="hidden" name="id" id="input_id" value="<?php echo $data['id_berita'] ?>" placeholder="">

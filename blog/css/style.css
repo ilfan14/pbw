@@ -1,0 +1,235 @@
+.header {
+    background-color: #000;
+}
+
+.header ul {
+    list-style: none outside none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.header  .content-slider li {
+    background-color: #000;
+    text-align: center;
+    color: #FFF;
+}
+
+.header .content-slider img {
+    height: 450px;
+}
+
+.navigasi .padding {
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+.isi {
+    padding-bottom: 40px;
+    margin-top: 20px;
+}
+
+.isi .kiri .hot-videos .list-title {
+    display: inline;
+    margin-right: 10px;
+}
+
+.isi .kiri .hot-videos .garis {
+    border-bottom: 2px solid #000;
+    width: 100%;
+    display: inline;
+    padding-left: 77%;
+}
+
+.isi h1 {
+    display: inline;
+    margin-right: 10px;
+}
+
+.garis {
+    border-bottom: 1px solid #e74c3c;
+    width: 100%;
+    display: inline;
+    padding-left: 77%;
+}
+
+.action-movies .garis {
+    padding-left: 70%;
+}
+
+.amerika-movies .garis {
+    padding-left: 64%;
+}
+
+.romance-movies .garis {
+    padding-left: 62%;
+}
+
+.kolom {
+    padding: 0;
+    margin: 20px 0;
+    transition: 0.3s;
+}
+
+.action-movies .kolom, .hot-movies .kolom, .recommended-movies .kolom, .yearsby-movies .kolom, .amerika-movies .kolom {
+    height: 380px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.kolom:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    text-decoration: none;
+    background-color: #eee;
+}
+
+.kolom:hover, .kolom h4:hover {
+    color: #e74c3c !important;
+    font-weight: 700;
+}
+
+.kolom img {
+    height: 300px;
+    width: 212px;
+    margin: auto;
+    display: block;
+}
+
+
+
+.kolom h4 {
+    color: #555;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.latest-movies h1 {
+    margin-top: 0;
+    padding-bottom: 10px;
+}
+
+.latest-movies img {
+    height: 150px;
+    width: 106px;
+}
+
+.latest-movies .kolom {
+    margin-bottom: 10px;
+}
+
+.latest-movies .kolom h4 {
+    text-align: left;
+    font-size: 20px;
+}
+
+.latest-movies .kolom p {
+    color: #555;
+}
+
+.latest-movies button {
+    margin-top: 20px;
+}
+
+.footer {
+    background-color: #555;
+    color: #fff;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.copyright {
+    background-color: #222;
+    color: yellow;
+    border-top: 2px solid #000;
+    padding-top: 10px;
+}
+
+.poster {
+    height: 500px;
+}
+
+.isi table tr td{
+    padding-bottom: 20px;
+}
+
+.isi table tr td:last-child{
+    padding-left: 20px;
+}
+
+.video video {
+    margin: auto;
+    display: block;
+    margin-top: 40px;
+}
+
+.download {
+    margin-top: 40px;
+}
+
+.hot-movies .garis {
+    padding-left: 72%;
+}
+
+.recommended-movies .garis {
+    padding-left: 50%;
+}
+
+.yearsby-movies .garis {
+    padding-left: 63%;
+}
+
+.hot-movies, .recommended-movies, .yearsby-movies {
+    margin-bottom: 30px;
+}
+
+.navigasi .navbar-default, .navigasi .dropdown-menu>li>a:hover {
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 0;
+    font-size: 17px;
+    border-bottom: 1px solid #dc3939;
+}
+
+.navigasi .navbar-default .padding, .navigasi .dropdown-menu>li>a:hover {
+    color: #fff;
+}
+
+.navigasi .navbar-default .navbar-nav>.active>a, .navigasi .navbar-default .navbar-nav>.active>a:focus, .navigasi .navbar-default .navbar-nav>.active>a:hover, .navigasi .navbar-default .navbar-nav>li>a:focus, .navigasi .navbar-default .navbar-nav>li>a:hover {
+    background-color: #fff;
+    color: #dc3939;
+}
+
+.btn-success, .btn-danger {
+    color: #fff;
+    background-color: #e74c3c;
+    padding: 10px 40px;
+    border-color: #e74c3c;
+}
+
+.btn-success:hover, .btn-danger:hover, .btn-success:focus, .btn-danger:focus {
+    color: #e74c3c;
+    background-color: #fff;
+    border-color: #e74c3c;
+}
+
+.btn-danger {
+    background-color: #2ecc71;
+    border-color: #2ecc71;
+}
+
+.btn-danger:hover {
+    color: #2ecc71;
+    border-color: #2ecc71;
+}
+
+.navbar-nav>li>.dropdown-menu {
+    width: 100%;
+    font-size: 16px;
+}
+
+.navbar-nav>li>.dropdown-menu .form-control {
+    width: 100%;
+}
+
+.panel-info {
+    border-color: #e74c3c;
+    margin-top: 40px;
+}

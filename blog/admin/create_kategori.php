@@ -1,8 +1,6 @@
 <?php
-
 include 'koneksi.php';
-
-?>
+include 'cek_session.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +56,7 @@ include 'koneksi.php';
                       <form class="form-horizontal style-form" action="add.php?jenis=kategori" method="POST" accept-charset="utf-8" enctype="multipart/form-data">
 
                           <div class="col-lg-12 form-group">
-                          
+
                           <div class="" style="float:left;">
                               <label class="col-sm-6 col-sm-6 control-label">Nama Kategori</label>
                               <div class="col-sm-6">
@@ -68,7 +66,7 @@ include 'koneksi.php';
 
                           </div>
 
-                          
+
 
                           <div style="margin-left: 83%;">
                   <button type="submit" class="btn btn-success">Tambah</button>

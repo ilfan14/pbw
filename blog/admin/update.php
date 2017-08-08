@@ -33,13 +33,15 @@ if ($_GET['jenis'] == "artikel") {
     $hari = $dayList[$day];
 
     if ($_FILES['foto']['name']!='') {
-    $dir_upload='assets/gambar/';
+    $dir_upload='../images/';
     $nama_gmb=$_FILES['foto']['name'];
     //tambahkan info foto
     $dir_sementara=$_FILES['foto']['tmp_name'];
     $ukuran_file=$_FILES['foto']['size'];
     $tipe_file=$_FILES['foto']['type'];
 
+
+    $nama_gmb = rand(0,100) . $nama_gmb;
     is_uploaded_file($_FILES['foto']['tmp_name']);
     move_uploaded_file($_FILES['foto']['tmp_name'], $dir_upload.$nama_gmb);
 
@@ -59,9 +61,23 @@ if ($_GET['jenis'] == "artikel") {
     $id_kategori = $_POST['id_kategori'];
 
     $sql = "UPDATE tabel_kategori SET kategori='$nama_kategori' WHERE id_kategori='$id_kategori'";
-    
+
     if ($connection->query($sql) === TRUE) {
         header("location:list_kategori.php");
+    } else {
+            echo "Error: " . $sql . "<br>" . $connection->error;
+    }
+
+} else if ($_GET['jenis'] == "user") {
+    $id=$_POST['id'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $level = $_POST['level'];
+
+    $sql = "UPDATE tabel_user SET username='$username',password='$password',level='$level' WHERE id_user='$id'";
+
+    if ($connection->query($sql) === TRUE) {
+        header("location:list_user.php");
     } else {
             echo "Error: " . $sql . "<br>" . $connection->error;
     }
@@ -69,5 +85,5 @@ if ($_GET['jenis'] == "artikel") {
 } else {
     echo "Wrong";
 }
-    
+
  ?>

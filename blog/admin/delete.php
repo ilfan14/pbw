@@ -33,5 +33,14 @@
             echo "Error: " . $sql . "<br>" . $connection->error;
         }
 
+    } else if ($_GET['jenis'] == 'user') {
+        $id = $_GET['id'];
+        $query = "DELETE FROM tabel_user WHERE id_user='$id'";
+        if ($connection->query($query) === TRUE) {
+            header("location:list_user.php");
+        } else {
+            echo "Error: " . $sql . "<br>" . $connection->error;
+        }
+
     }
 ?>

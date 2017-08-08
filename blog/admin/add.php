@@ -4,8 +4,8 @@
 
 
     if ($_GET['jenis'] == "artikel") {
-        
-        // CREATE UNTUK ARTIKEL 
+
+        // CREATE UNTUK ARTIKEL
 
         $judul_berita = $_POST['judul_artikel'];
         $kategori_artikel = $_POST['kategori_artikel'];
@@ -38,12 +38,16 @@
         $hari = $dayList[$day];
 
 
-        $dir_upload='assets/gambar/';
+        $dir_upload='../images/';
         $nama_gmb=$_FILES['foto']['name'];
         //tambahkan info foto
         $dir_sementara=$_FILES['foto']['tmp_name'];
         $ukuran_file=$_FILES['foto']['size'];
         $tipe_file=$_FILES['foto']['type'];
+
+        // random image
+
+        $nama_gmb = rand(0,100) . $nama_gmb;
 
         is_uploaded_file($_FILES['foto']['tmp_name']);
         move_uploaded_file($_FILES['foto']['tmp_name'], $dir_upload.$nama_gmb);
@@ -58,7 +62,7 @@
 
 
     } else if ($_GET['jenis'] == "kategori"){
-        
+
         // CREATE KATEGORI
         $nama_kategori = $_POST['nama_kategori'];
 
@@ -66,6 +70,19 @@
 
         if ($connection->query($sql) === TRUE) {
             header("location:list_kategori.php");
+            } else {
+                echo "Error: " . $sql . "<br>" . $connection->error;
+            }
+
+    } else if ($_GET['jenis'] == "user") {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $level = $_POST['level'];
+
+        $sql = "INSERT INTO tabel_user (username,password,level) VALUES ('$username','$password','$level')";
+
+        if ($connection->query($sql) === TRUE) {
+            header("location:list_user.php");
             } else {
                 echo "Error: " . $sql . "<br>" . $connection->error;
             }

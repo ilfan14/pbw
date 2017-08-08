@@ -1,6 +1,6 @@
 <?php
-
 include 'koneksi.php';
+include 'cek_session.php';
 $id=$_GET['id'];
 $sql="SELECT * FROM tabel_kategori WHERE id_kategori='$id'";
 $r = $connection->query($sql);
@@ -61,7 +61,7 @@ $data = $r->fetch_array();
                       <form class="form-horizontal style-form" action="update.php?jenis=kategori" method="POST" accept-charset="utf-8" enctype="multipart/form-data">
 
                           <div class="col-lg-12 form-group">
-                          
+
                           <div class="" style="float:left;">
                               <label class="col-sm-6 col-sm-6 control-label">Nama Kategori</label>
                               <input type="text" name="id_kategori" id="id_kategori" hidden value=<?php echo $data['id_kategori']; ?>>
@@ -72,7 +72,7 @@ $data = $r->fetch_array();
 
                           </div>
 
-                          
+
 
                           <div style="margin-left: 83%;">
                   <button type="submit" class="btn btn-success">Simpan</button>

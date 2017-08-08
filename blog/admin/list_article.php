@@ -1,8 +1,6 @@
 <?php
-
 include 'koneksi.php';
-
-?>
+include 'cek_session.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,7 +63,7 @@ include 'koneksi.php';
               </thead>
               <tbody>
                 <?php
-                  $kategori=mysqli_query($connection, "SELECT tabel_berita.*, tabel_kategori.kategori FROM tabel_berita INNER JOIN tabel_kategori ON tabel_kategori.id_kategori = tabel_berita.id_kategori");
+                  $kategori=mysqli_query($connection, "SELECT tabel_berita.*, tabel_kategori.kategori FROM tabel_berita INNER JOIN tabel_kategori ON tabel_kategori.id_kategori = tabel_berita.id_kategori ");
                   $nomor = null;
                   while ($r=mysqli_fetch_array($kategori)) {
                     $nomor += 1;
