@@ -16,7 +16,7 @@ $data = $r->fetch_array();
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Buat Artikel</title>
+    <title>Edit Ketegori</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -51,13 +51,13 @@ $data = $r->fetch_array();
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
-            <h3><i class="fa fa-angle-right"></i>Buat Artikel</h3>
+            <h3><i class="fa fa-angle-right"></i>Edit Kategori</h3>
 
             <!-- BASIC FORM ELELEMNTS -->
             <div class="row mt">
               <div class="col-lg-12">
                   <div class="form-panel">
-                      <h4 class="mb"><i class="fa fa-angle-right"></i>Buat  Kategori</h4>
+                      <h4 class="mb"><i class="fa fa-angle-right"></i>Edit Kategori</h4>
                       <form class="form-horizontal style-form" action="update.php?jenis=kategori" method="POST" accept-charset="utf-8" enctype="multipart/form-data">
 
                           <div class="col-lg-12 form-group">

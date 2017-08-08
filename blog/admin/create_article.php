@@ -26,7 +26,10 @@ include 'cek_session.php'; ?>
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
     <script src="assets/tinymce/tinymce.min.js"></script>
-    <script>tinymce.init({ selector:'textarea' });</script>
+    <script>tinymce.init({ selector:'textarea',
+      plugins: "image, imagetools, advlist, code, media, link, colorpicker, paste, table, textcolor",
+      media_live_embeds: true
+    });</script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -102,8 +105,19 @@ include 'cek_session.php'; ?>
                               </div>
                           </div>
 
+<<<<<<< HEAD
                                   <input type="hidden" class="form-control" name="penulis" id="penulis" value="<?php echo $sess ?>" placeholder="penulis">
 
+=======
+                          <div class="form-group">
+                            
+                            <label class="col-sm-2 col-sm-2 control-label">Penulis Artikel</label>
+                            <div class="col-sm-10">
+                                  <input disabled class="form-control" name="penulis" id="penulis" value="<?php echo $sess ?>" placeholder="penulis">
+                            </div>
+                          </div>
+                 
+>>>>>>> 5048ddd9109c8b34ad9108083aff6a01c2b03acb
 
 
                           <div style="margin-left: 83%;">

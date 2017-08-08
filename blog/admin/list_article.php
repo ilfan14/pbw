@@ -43,12 +43,12 @@ include 'cek_session.php'; ?>
       <!--main content start-->
       <section id="main-content">
         <section class="wrapper">
-         <h3><i class="fa fa-angle-right"></i> Basic Table Examples</h3>
+         <h3><i class="fa fa-angle-right"></i> Daftar Artikel</h3>
          <div class="row">
 
            <div class="col-md-12">
             <div class="content-panel">
-             <h4><i class="fa fa-angle-right"></i> Basic Table</h4>
+             <h4><i class="fa fa-angle-right"></i> Daftar Artikel</h4>
              <hr>
              <table class="table">
               <thead>
