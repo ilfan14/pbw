@@ -26,7 +26,10 @@ include 'cek_session.php'; ?>
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
     <script src="assets/tinymce/tinymce.min.js"></script>
-    <script>tinymce.init({ selector:'textarea' });</script>
+    <script>tinymce.init({ selector:'textarea',
+      plugins: "media",
+      media_live_embeds: true
+    });</script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
