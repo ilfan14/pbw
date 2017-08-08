@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 08, 2017 at 05:46 AM
+-- Generation Time: Aug 08, 2017 at 05:50 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -94,7 +94,7 @@ CREATE TABLE `tabel_komentar` (
   `id_berita` int(11) NOT NULL,
   `isi_komentar` text NOT NULL,
   `tanggal` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `status` int(1) NOT NULL
+  `status` enum('Y','T') NOT NULL DEFAULT 'T'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
