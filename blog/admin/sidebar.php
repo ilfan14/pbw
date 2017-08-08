@@ -25,7 +25,6 @@
                       <ul class="sub">
                           <li><a  href="create_article.php">Buat Artikel</a></li>
                           <li><a  href="list_article.php">List Artikel</a></li>
-                          <li><a  href="panels.html">Comming soon</a></li>
                       </ul>
                   </li>
 
@@ -48,7 +47,6 @@
                       <ul class="sub">
                           <li><a  href="create_user.php">Buat User</a></li>
                           <li><a  href="list_user.php">List User</a></li>
-                          <li><a  href="panels.html">Comming soon</a></li>
                       </ul>
                   </li>
                   <?php } else if ($sess1=='penulis')  { ?>
@@ -67,7 +65,6 @@
                       <ul class="sub">
                           <li><a  href="create_article.php">Buat Artikel</a></li>
                           <li><a  href="list_article.php">List Artikel</a></li>
-                          <li><a  href="panels.html">Comming soon</a></li>
                       </ul>
                   </li>
 
@@ -97,7 +94,6 @@
                       </a>
                       <ul class="sub">
                           <li><a  href="list_article.php">List Artikel</a></li>
-                          <li><a  href="panels.html">Comming soon</a></li>
                       </ul>
                   </li>
 
