@@ -91,6 +91,22 @@
                 echo "Error: " . $sql . "<br>" . $connection->error;
             }
 
+    } else if ($_GET['jenis'] == "komen") {
+        $nama = $_POST['nama'];
+        $email = $_POST['email'];
+        $komentar = $_POST['komentar'];
+        $id_berita = $_POST['id'];
+
+        $sql = "INSERT INTO tabel_komentar (nama,email,id_berita,isi_komentar) VALUES ('$nama','$email','$id_berita','$komentar')";
+
+        if ($connection->query($sql) === TRUE) {
+
+            // header("location:list_user.php");
+            echo "<script>window.history.back();</script>";
+            } else {
+                echo "Error: " . $sql . "<br>" . $connection->error;
+            }
+
     } else {
         echo "Wrong";
     }

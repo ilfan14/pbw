@@ -103,31 +103,6 @@ include 'cek_session.php'; ?>
                           </div>
 
                                   <input type="hidden" class="form-control" name="penulis" id="penulis" value="<?php echo $sess ?>" placeholder="penulis">
-                          <!-- <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Tanggal & Waktu</label>
-                              <div class="col-sm-4">
-                                      <div class="input-append date input-group date">
-                                          <input class="form-control form_datetime" type="text" name="tanggal" value="" placeholder="tanggal & waktu">
-                                          <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
-                                      </div>
-                              </div>
-                          </div>
-
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Hari</label>
-                              <div class="col-sm-4">
-                              <select class="form-control" name="hari">
-                                    <option value="">Plih Hari</option>
-                                    <option value="Senin">Senin</option>
-                                    <option value="Selasa">Selasa</option>
-                                    <option value="Rabu">Rabu</option>
-                                    <option value="Kamis">Kamis</option>
-                                    <option value="Jum'at">Jum'at</option>
-                                    <option value="Sabtu">Sabtu</option>
-                                    <option value="Minggu">Minggu</option>
-                                  </select>
-                              </div>
-                          </div> -->
 
 
 
