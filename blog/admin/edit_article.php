@@ -116,8 +116,14 @@ $data = $r->fetch_array();
                               </div>
                           </div>
 
-
-                                  <input type="hidden" class="form-control" name="penulis" id="penulis" value="<?php echo $data['penulis']; ?>" placeholder="penulis">
+                          <div class="form-group">
+                            
+                            <label class="col-sm-2 col-sm-2 control-label">Penulis Artikel</label>
+                            <div class="col-sm-10">
+                              <input class="form-control" name="penulis" id="penulis" value="<?php echo $data['penulis']; ?>" placeholder="penulis" disabled>
+                            </div>
+                          </div>
+                          
 
 
                           <div style="margin-left: 83%;">
