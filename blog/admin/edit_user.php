@@ -59,7 +59,7 @@ include 'koneksi.php';
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
-            <h3><i class="fa fa-angle-right"></i> Ubah Artikel</h3>
+            <h3><i class="fa fa-angle-right"></i> Ubah User</h3>
 
             <!-- BASIC FORM ELELEMNTS -->
             <div class="row mt">

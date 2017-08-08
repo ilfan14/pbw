@@ -49,7 +49,7 @@ include 'cek_session.php'; ?>
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
-            <h3><i class="fa fa-angle-right"></i> Buat Artikel</h3>
+            <h3><i class="fa fa-angle-right"></i> Buat User</h3>
 
             <!-- BASIC FORM ELELEMNTS -->
             <div class="row mt">
@@ -102,7 +102,7 @@ include 'cek_session.php'; ?>
               </div><!-- col-lg-12-->
             </div><!-- /row -->
 
-    </section><! --/wrapper -->
+    </section>
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
