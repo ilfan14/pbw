@@ -9,8 +9,11 @@
 
         $judul_berita = $_POST['judul_artikel'];
         $kategori_artikel = $_POST['kategori_artikel'];
-        $isi_artikel = $_POST['isi_artikel'];
+        $isi_artikel_unscape = $_POST['isi_artikel'];
         $penulis = $_POST['penulis'];
+
+        $isi_artikel = mysql_real_escape_string($isi_artikel_unscape);
+
 
         //get date now
         $date = new DateTime('now', new DateTimeZone('Asia/Jakarta'));
