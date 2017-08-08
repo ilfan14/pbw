@@ -31,9 +31,8 @@ $data = $r->fetch_array();
     <link href="assets/css/style-responsive.css" rel="stylesheet">
     <script src="assets/tinymce/tinymce.min.js"></script>
     <script>tinymce.init({ selector:'textarea',
-      plugins: "media",
+      plugins: "image,  imagetools, advlist, code, media, link, colorpicker, paste, table, textcolor",
       media_live_embeds: true
-
      });</script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

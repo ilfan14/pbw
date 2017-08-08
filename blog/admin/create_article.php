@@ -27,7 +27,7 @@ include 'cek_session.php'; ?>
 
     <script src="assets/tinymce/tinymce.min.js"></script>
     <script>tinymce.init({ selector:'textarea',
-      plugins: "media",
+      plugins: "image, imagetools, advlist, code, media, link, colorpicker, paste, table, textcolor",
       media_live_embeds: true
     });</script>
 
