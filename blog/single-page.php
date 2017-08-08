@@ -43,11 +43,11 @@
                           <div class="form-panel">
                               <h4 class="mb"><i class="fa fa-angle-right"></i> KOMEN</h4>
 
+                                    <div class="container-fluid" style="border: 1px solid #cac1c1;border-radius: 10px;">
                               <?php
-                                $komentar = mysqli_query($connection, "SELECT * FROM tabel_komentar WHERE id_berita=$id");
+                                $komentar = mysqli_query($connection, "SELECT * FROM tabel_komentar WHERE id_berita=$id ORDER BY tanggal");
                                 while ($r=mysqli_fetch_array($komentar)) {
                                     ?>
-                                    <div class="container-fluid" style="border: 1px solid #cac1c1;border-radius: 10px;">
                                     <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1" style="margin:10px">
 
                                     <img src="admin/assets/img/friends/fr-05.jpg" alt="" width="150%" height="100%">
