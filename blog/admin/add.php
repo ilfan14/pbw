@@ -82,6 +82,7 @@
         $sql = "INSERT INTO tabel_user (username,password,level) VALUES ('$username','$password','$level')";
 
         if ($connection->query($sql) === TRUE) {
+
             header("location:list_user.php");
             } else {
                 echo "Error: " . $sql . "<br>" . $connection->error;

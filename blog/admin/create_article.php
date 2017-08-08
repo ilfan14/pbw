@@ -99,13 +99,7 @@ include 'cek_session.php'; ?>
                               </div>
                           </div>
 
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Penulis</label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="penulis" id="penulis" value="" placeholder="penulis">
-                              </div>
-                          </div>
-
+                                  <input type="hidden" class="form-control" name="penulis" id="penulis" value="<?php echo $sess ?>" placeholder="penulis">
                           <!-- <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Tanggal & Waktu</label>
                               <div class="col-sm-4">

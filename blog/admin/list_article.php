@@ -63,7 +63,9 @@ include 'cek_session.php'; ?>
               </thead>
               <tbody>
                 <?php
-                  $kategori=mysqli_query($connection, "SELECT tabel_berita.*, tabel_kategori.kategori FROM tabel_berita INNER JOIN tabel_kategori ON tabel_kategori.id_kategori = tabel_berita.id_kategori ");
+                if ($sess1=="admin") {
+
+                  $kategori=mysqli_query($connection, "SELECT tabel_berita.*, tabel_kategori.kategori FROM tabel_berita INNER JOIN tabel_kategori ON tabel_kategori.id_kategori = tabel_berita.id_kategori");
                   $nomor = null;
                   while ($r=mysqli_fetch_array($kategori)) {
                     $nomor += 1;
@@ -77,6 +79,39 @@ include 'cek_session.php'; ?>
                         <a href=\"delete.php?jenis=artikel&id=$r[id_berita]\"
                         onclick=\"return confirm('Anda yakin akan menghapus $r[judul_berita]?')\"><button type=button class=btn btn-warning>Hapus</button></a> </td> </tr>";
                   }
+                } else if($sess1=="editor") {
+                    $kategori=mysqli_query($connection, "SELECT tabel_berita.*, tabel_kategori.kategori FROM tabel_berita INNER JOIN tabel_kategori ON tabel_kategori.id_kategori = tabel_berita.id_kategori WHERE tabel_berita.status=0");
+                  $nomor = null;
+                  while ($r=mysqli_fetch_array($kategori)) {
+                    $nomor += 1;
+                    echo "<tr> <td>";
+                    echo $nomor;
+                    echo "</td> <td> $r[judul_berita] </td>";
+                    echo "<td> $r[penulis] </td>";
+                    echo "<td> $r[kategori] </td>";
+                    echo "<td> $r[tanggal] </td>";
+                    echo "<td> <a href=edit_article.php?id=$r[id_berita]><button type=button class=btn btn-info>Edit</button></a> |
+                        <a href=\"delete.php?jenis=artikel&id=$r[id_berita]\"
+                        onclick=\"return confirm('Anda yakin akan menghapus $r[judul_berita]?')\"><button type=button class=btn btn-warning>Hapus</button></a> |
+                        <a href=\"konfirm.php?id=$r[id_berita]\"
+                        onclick=\"return confirm('Konfirmasi Berita $r[judul_berita]?')\"><button type=button class=btn btn-warning>Konfirmasi</button></a></td> </tr>";
+                  }
+                } else if($sess1=="penulis") {
+                  $kategori=mysqli_query($connection, "SELECT tabel_berita.*, tabel_kategori.kategori FROM tabel_berita INNER JOIN tabel_kategori ON tabel_kategori.id_kategori = tabel_berita.id_kategori WHERE tabel_berita.status=0 AND tabel_berita.penulis='$sess'");
+                  $nomor = null;
+                  while ($r=mysqli_fetch_array($kategori)) {
+                    $nomor += 1;
+                    echo "<tr> <td>";
+                    echo $nomor;
+                    echo "</td> <td> $r[judul_berita] </td>";
+                    echo "<td> $r[penulis] </td>";
+                    echo "<td> $r[kategori] </td>";
+                    echo "<td> $r[tanggal] </td>";
+                    echo "<td> <a href=edit_article.php?id=$r[id_berita]><button type=button class=btn btn-info>Edit</button></a> |
+                        <a href=\"delete.php?jenis=artikel&id=$r[id_berita]\"
+                        onclick=\"return confirm('Anda yakin akan menghapus $r[judul_berita]?')\"><button type=button class=btn btn-warning>Hapus</button></a> </td> </tr>";
+                  }
+                }
                 ?>
               </tbody>
             </table>

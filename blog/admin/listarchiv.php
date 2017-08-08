@@ -63,7 +63,7 @@ include 'cek_session.php'; ?>
               </thead>
               <tbody>
                 <?php
-                  $kategori=mysqli_query($connection, "SELECT tabel_berita.*, tabel_kategori.kategori FROM tabel_berita INNER JOIN tabel_kategori ON tabel_kategori.id_kategori = tabel_berita.id_kategori WHERE tabel_berita.status=0 AND tabel_berita.penulis='$sess'");
+                  $kategori=mysqli_query($connection, "SELECT tabel_berita.*, tabel_kategori.kategori FROM tabel_berita INNER JOIN tabel_kategori ON tabel_kategori.id_kategori = tabel_berita.id_kategori WHERE tabel_berita.status=1");
                   $nomor = null;
                   while ($r=mysqli_fetch_array($kategori)) {
                     $nomor += 1;
@@ -75,7 +75,7 @@ include 'cek_session.php'; ?>
                     echo "<td> $r[tanggal] </td>";
                     echo "<td> <a href=edit_article.php?id=$r[id_berita]><button type=button class=btn btn-info>Edit</button></a> |
                         <a href=\"delete.php?jenis=artikel&id=$r[id_berita]\"
-                        onclick=\"return confirm('Anda yakin akan menghapus $r[judul_berita]?')\"><button type=button class=btn btn-warning>Hapus</button></a> </td> </tr>";
+                        onclick=\"return confirm('Anda yakin akan menghapus $r[judul_berita]?')\"><button type=button class=btn btn-warning>Hapus</button></a></td> </tr>";
                   }
                 ?>
               </tbody>

@@ -66,7 +66,7 @@
                       </a>
                       <ul class="sub">
                           <li><a  href="create_article.php">Buat Artikel</a></li>
-                          <li><a  href="list_articlepenulis.php">List Artikel</a></li>
+                          <li><a  href="list_article.php">List Artikel</a></li>
                           <li><a  href="panels.html">Comming soon</a></li>
                       </ul>
                   </li>
@@ -83,7 +83,7 @@
                   </li>
 
                   <?php } else if ($sess1=='editor')  { ?>
-                    <li class="mt">
+                  <li class="mt">
                       <a href="index.php">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
@@ -96,7 +96,7 @@
                           <span>Article</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="list_articleeditor.php">List Artikel</a></li>
+                          <li><a  href="list_article.php">List Artikel</a></li>
                           <li><a  href="panels.html">Comming soon</a></li>
                       </ul>
                   </li>
@@ -109,6 +109,13 @@
                       <ul class="sub">
                           <li><a  href="list_kategori.php">List Kategori</a></li>
                       </ul>
+                  </li>
+
+                  <li class="sub-menu">
+                      <a href="listarchiv.php">
+                          <i class="fa fa-desktop"></i>
+                          <span>Archivment</span>
+                      </a>
                   </li>
                   <?php } ?>
               </ul>
