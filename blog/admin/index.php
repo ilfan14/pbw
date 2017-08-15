@@ -11,7 +11,7 @@ $dashboard="active"?>
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>DASHGUM - FREE Bootstrap Admin Template</title>
+    <title>Ndes' MOVIE - Movie -Movie Premier</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -264,7 +264,7 @@ $dashboard="active"?>
 
                   <div class="col-lg-3 ds">
                     <!--COMPLETED ACTIONS DONUTS CHART-->
-					
+
                        <!-- USERS ONLINE SECTION -->
 						<h3>TEAM MEMBERS</h3>
                       <!-- First Member -->
@@ -323,7 +323,7 @@ $dashboard="active"?>
                       	</div>
                       </div>
 
-                        
+
 
                   </div><!-- /col-lg-3 -->
               </div><! --/row -->

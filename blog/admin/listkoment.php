@@ -13,7 +13,7 @@ $komentar="active";
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-  <title>DASHGUM - Bootstrap Admin Template</title>
+  <title>Ndes' MOVIE - Movie -Movie Premier</title>
 
   <!-- Bootstrap core CSS -->
   <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -68,6 +68,7 @@ $komentar="active";
                 <?php
                   $kategori=mysqli_query($connection, "SELECT tabel_berita.id_berita,tabel_berita.judul_berita,tabel_komentar.* FROM tabel_berita INNER JOIN tabel_komentar ON tabel_berita.id_berita = tabel_komentar.id_berita WHERE tabel_komentar.status='T' ORDER BY tanggal ASC");
                   $nomor = null;
+                    if (mysqli_num_rows($kategori) > 0) {
                   while ($r=mysqli_fetch_array($kategori)) {
                     $nomor += 1;
                     echo "<tr> <td>";
@@ -82,6 +83,9 @@ $komentar="active";
                         onclick=\"return confirm('Anda yakin akan menghapus komentar $r[judul_berita]?')\"><button type='button' class='btn btn-danger'>Hapus</button></a> |
                         <a href=\"konfirm.php?jenis=komentar&id=$r[id]\"
                         onclick=\"return confirm('Konfirmasi Komentar $r[nama]?')\"><button type='button' class='btn btn-success'>Konfirmasi</button></a></td> </tr>";
+                      }
+                      }else {
+                        echo "<td style='text-align:center' colspan='7'>Tidak ada data</td>";
                   }
                 ?>
               </tbody>

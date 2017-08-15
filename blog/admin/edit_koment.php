@@ -17,7 +17,7 @@ $data = $r->fetch_array();
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Edit Ketegori</title>
+    <title>Ndes' MOVIE - Edit Komentar</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">

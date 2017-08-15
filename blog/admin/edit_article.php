@@ -17,7 +17,7 @@ $data = $r->fetch_array();
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Ubah Artikel</title>
+    <title>Ndes' MOVIE - Ubah Artikel</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -30,6 +30,7 @@ $data = $r->fetch_array();
     <!-- Custom styles for this template -->
     <link href="assets/css/style1.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
+    <link href="assets/css/select2.css" rel="stylesheet">
     <script src="assets/tinymce/tinymce.min.js"></script>
     <script>tinymce.init({ selector:'textarea',
       plugins: "image,  imagetools, advlist, code, media, link, colorpicker, paste, table, textcolor",
@@ -75,8 +76,7 @@ $data = $r->fetch_array();
                             <div class="">
                               <label class="col-sm-1 col-sm-1 control-label">Kategori</label>
                                 <div class="col-sm-2">
-                                  <select class="form-control" name="kategori_artikel">
-                                    <option value="">PILIH KATEGORI</option>
+                                  <select class="form-control" name="kategori_artikel" id="select" style="height: 0">
                                       <?php
                                         $kategori=mysqli_query($connection, "SELECT * FROM tabel_kategori");
                                         while ($r=mysqli_fetch_array($kategori)) {
@@ -166,6 +166,8 @@ $data = $r->fetch_array();
 
     <!--common script for all pages-->
     <script src="assets/js/common-scripts.js"></script>
+    <script src="assets/js/extra/select2.js"></script>
+    <script src="assets/js/extra/select2script.js"></script>
 
     <!--script for this page-->
     <!-- <script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script> -->

@@ -13,7 +13,7 @@ $kategori="active";
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-  <title>DASHGUM - Bootstrap Admin Template</title>
+  <title>Ndes' MOVIE - Movie -Movie Premier</title>
 
   <!-- Bootstrap core CSS -->
   <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -64,6 +64,7 @@ $kategori="active";
                 <?php
                   $kategori=mysqli_query($connection, "SELECT * FROM tabel_kategori");
                   $nomor = null;
+                  if (mysqli_num_rows($kategori) > 0) {
                   while ($r=mysqli_fetch_array($kategori)) {
                     $nomor += 1;
                     echo "<tr> <td>";
@@ -72,6 +73,9 @@ $kategori="active";
                     echo "<td> <a href=edit_kategori.php?id=$r[id_kategori]><button type='button' class='btn btn-info'>Edit</button></a> |
                         <a href=\"delete.php?jenis=kategori&id=$r[id_kategori]\"
                         onclick=\"return confirm('Anda yakin akan menghapus $r[kategori]?')\"><button type='button' class='btn btn-danger'>Hapus</button></a> </td> </tr>";
+                  }
+                }else {
+                        echo "<td style='text-align:center' colspan='3'>Tidak ada data</td>";
                   }
                 ?>
               </tbody>

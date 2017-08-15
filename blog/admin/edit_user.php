@@ -22,10 +22,10 @@ include 'koneksi.php';
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Ubah User</title>
+    <title>Ndes' MOVIE - Ubah User</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <!-- <link rel="stylesheet" type="text/css" href="assets/datepicker/css/bootstrap-datepicker.css" /> -->
@@ -35,6 +35,7 @@ include 'koneksi.php';
     <!-- Custom styles for this template -->
     <link href="assets/css/style1.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
+    <link href="assets/css/select2.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -97,7 +98,18 @@ include 'koneksi.php';
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Level</label>
                               <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="level" id="level" value="<?php echo $data['level']; ?>" placeholder="level">
+                                  <select name="level" id="select">
+                                    <?php
+                                    $level=mysqli_query($connection, "SELECT * FROM tabel_user GROUP BY level");
+                                        while ($r=mysqli_fetch_array($level)) {
+                                        if ($data[level] == $r[level]){
+                                            echo "<option value=$r[level] selected> $r[level]</option>";
+                                          } else {
+                                            echo "<option value=$r[level] > $r[level]</option>";
+                                          }
+                                        }
+                                     ?>
+                                  </select>
                               </div>
                           </div>
 
@@ -130,7 +142,7 @@ include 'koneksi.php';
     <script src="assets/js/jquery.js"></script>
   <!-- <script type="text/javascript" src="assets/datepicker/js/bootstrap-datepicker.js"></script> -->
   <!-- <script type="text/javascript" src="assets/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js"></script> -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <!--
     <script type="text/javascript">
                     $(".form_datetime").datetimepicker({
@@ -147,6 +159,8 @@ include 'koneksi.php';
 
     <!--common script for all pages-->
     <script src="assets/js/common-scripts.js"></script>
+    <script src="assets/js/extra/select2.js"></script>
+    <script src="assets/js/extra/select2script.js"></script>
 
     <!--script for this page-->
     <!-- <script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script> -->

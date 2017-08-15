@@ -13,7 +13,7 @@ $user="active";
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Buat User</title>
+    <title>Ndes' MOVIE - Buat User</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -26,7 +26,7 @@ $user="active";
     <!-- Custom styles for this template -->
     <link href="assets/css/style1.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
-
+    <link href="assets/css/select2.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -83,17 +83,28 @@ $user="active";
                               </div>
                           </div>
 
-                          <div class="form-group">
+                          <!-- <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Level</label>
                               <div class="col-sm-10">
                                   <input type="text" class="form-control" name="level" id="level" value="" placeholder="level">
+                              </div>
+                          </div> -->
+
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Level</label>
+                              <div class="col-sm-10">
+                                  <select name="level" id="select">
+                                    <option value="admin">Admin</option>
+                                    <option value="penulis">Penulis</option>
+                                    <option value="editor">Editor</option>
+                                  </select>
                               </div>
                           </div>
 
                           </div>
                           <div style="margin-left: 83%;">
                   <button type="submit" class="btn btn-success">Tambah</button>
-                  <a href="list_article.php"><button type="button" class="btn btn-danger">Batal</button></a>
+                  <a href="list_user.php"><button type="button" class="btn btn-danger">Batal</button></a>
               </div>
 
 
@@ -136,6 +147,8 @@ $user="active";
 
     <!--common script for all pages-->
     <script src="assets/js/common-scripts.js"></script>
+    <script src="assets/js/extra/select2.js"></script>
+    <script src="assets/js/extra/select2script.js"></script>
 
     <!--script for this page-->
     <!-- <script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script> -->

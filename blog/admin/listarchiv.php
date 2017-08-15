@@ -13,7 +13,7 @@ $archiv="active";
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-  <title>DASHGUM - Bootstrap Admin Template</title>
+  <title>Ndes' MOVIE - Movie -Movie Premier</title>
 
   <!-- Bootstrap core CSS -->
   <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -67,6 +67,7 @@ $archiv="active";
                 <?php
                   $kategori=mysqli_query($connection, "SELECT tabel_berita.*, tabel_kategori.kategori FROM tabel_berita INNER JOIN tabel_kategori ON tabel_kategori.id_kategori = tabel_berita.id_kategori WHERE tabel_berita.status=1");
                   $nomor = null;
+                  if (mysqli_num_rows($kategori) > 0) {
                   while ($r=mysqli_fetch_array($kategori)) {
                     $nomor += 1;
                     echo "<tr> <td>";
@@ -77,6 +78,9 @@ $archiv="active";
                     echo "<td> $r[tanggal] </td>";
                     echo "<td> <a href=\"delete.php?jenis=artikel&id=$r[id_berita]\"
                         onclick=\"return confirm('Anda yakin akan menghapus $r[judul_berita]?')\"><button type='button' class='btn btn-danger'>Hapus</button></a></td> </tr>";
+                  }
+                }else {
+                        echo "<td style='text-align:center' colspan='6'>Tidak ada data</td>";
                   }
                 ?>
               </tbody>

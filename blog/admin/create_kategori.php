@@ -13,7 +13,7 @@ $kategori="active";
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Buat Artikel</title>
+    <title>Ndes' MOVIE - Buat Artikel</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -72,7 +72,7 @@ $kategori="active";
 
                           <div style="margin-left: 83%;">
                   <button type="submit" class="btn btn-success">Tambah</button>
-                  <a href="list_article.php"><button type="button" class="btn btn-danger">Batal</button></a>
+                  <a href="list_kategori.php"><button type="button" class="btn btn-danger">Batal</button></a>
               </div>
 
 

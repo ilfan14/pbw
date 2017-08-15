@@ -13,10 +13,10 @@ $user="active";
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-  <title>DASHGUM - Bootstrap Admin Template</title>
+  <title>Ndes' MOVIE - Movie -Movie Premier</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="assets/css/bootstrap.css" rel="stylesheet">
+  <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
   <!--external css-->
   <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
 
@@ -67,6 +67,7 @@ $user="active";
                 <?php
                   $kategori=mysqli_query($connection, "SELECT *  FROM tabel_user");
                   $nomor = null;
+                  if (mysqli_num_rows($kategori) > 0) {
                   while ($r=mysqli_fetch_array($kategori)) {
                     $nomor += 1;
                     echo "<tr> <td>";
@@ -75,9 +76,12 @@ $user="active";
                     echo "<td> $r[password] </td>";
                     echo "<td> $r[level] </td>";
                     echo "<td> $r[tanggal_dibuat] </td>";
-                    echo "<td> <a href=edit_user.php?id=$r[id_user]><button type=button class=btn btn-info>Edit</button></a> |
+                    echo "<td> <a href=edit_user.php?id=$r[id_user]><button type='button' class='btn btn-info'>Edit</button></a> |
                         <a href=\"delete.php?jenis=user&id=$r[id_user]\"
-                        onclick=\"return confirm('Anda yakin akan menghapus $r[username]?')\"><button type=button class=btn btn-warning>Hapus</button></a> </td> </tr>";
+                        onclick=\"return confirm('Anda yakin akan menghapus $r[username]?')\"><button type='button' class='btn btn-danger'>Hapus</button></a> </td> </tr>";
+                  }
+                  }else {
+                        echo "<td style='text-align:center' colspan='6'>Tidak ada data</td>";
                   }
                 ?>
               </tbody>
@@ -100,7 +104,7 @@ $user="active";
 
 <!-- js placed at the end of the document so the pages load faster -->
 <script src="assets/js/jquery.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
 <script src="assets/js/jquery.scrollTo.min.js"></script>
 <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>

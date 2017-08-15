@@ -13,7 +13,7 @@ $artikel="active";
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-  <title>DASHGUM - Bootstrap Admin Template</title>
+  <title>Ndes' MOVIE - Movie -Movie Premier</title>
 
   <!-- Bootstrap core CSS -->
   <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -70,6 +70,7 @@ $artikel="active";
                   $kategori=mysqli_query($connection, "SELECT tabel_berita.*, tabel_kategori.kategori FROM tabel_berita INNER JOIN tabel_kategori ON tabel_kategori.id_kategori = tabel_berita.id_kategori");
                   $nomor = null;
                   while ($r=mysqli_fetch_array($kategori)) {
+                    if ($r > 0) {
                     $nomor += 1;
                     echo "<tr> <td>";
                     echo $nomor;
@@ -80,10 +81,14 @@ $artikel="active";
                     echo "<td> <a href=edit_article.php?jenis=artikel&id=$r[id_berita]><button type='button' class='btn btn-info'>Edit</button></a> |
                         <a href=\"delete.php?jenis=artikel&id=$r[id_berita]\"
                         onclick=\"return confirm('Anda yakin akan menghapus $r[judul_berita]?')\"><button type='button' class='btn btn-danger'>Hapus</button></a> </td> </tr>";
+                      }else {
+                        echo "<td colspans=6>Tidak ada data</td>";
+                      }
                   }
                 } else if($sess1=="editor") {
                     $kategori=mysqli_query($connection, "SELECT tabel_berita.*, tabel_kategori.kategori FROM tabel_berita INNER JOIN tabel_kategori ON tabel_kategori.id_kategori = tabel_berita.id_kategori WHERE tabel_berita.status=0");
                   $nomor = null;
+                  if (mysqli_num_rows($kategori) > 0) {
                   while ($r=mysqli_fetch_array($kategori)) {
                     $nomor += 1;
                     echo "<tr> <td>";
@@ -97,10 +102,15 @@ $artikel="active";
                         onclick=\"return confirm('Anda yakin akan menghapus $r[judul_berita]?')\"><button type='button' class='btn btn-danger'>Hapus</button></a> |
                         <a href=\"konfirm.php?jenis=artikel&id=$r[id_berita]\"
                         onclick=\"return confirm('Konfirmasi Berita $r[judul_berita]?')\"><button type='button' class='btn btn-success'>Konfirmasi</button></a></td> </tr>";
+
+                  }
+                } else {
+                        echo "<td style='text-align:center' colspan='6'>Tidak ada data</td>";
                   }
                 } else if($sess1=="penulis") {
                   $kategori=mysqli_query($connection, "SELECT tabel_berita.*, tabel_kategori.kategori FROM tabel_berita INNER JOIN tabel_kategori ON tabel_kategori.id_kategori = tabel_berita.id_kategori WHERE tabel_berita.status=0 AND tabel_berita.penulis='$sess'");
                   $nomor = null;
+                  if (mysqli_num_rows($kategori) > 0) {
                   while ($r=mysqli_fetch_array($kategori)) {
                     $nomor += 1;
                     echo "<tr> <td>";
@@ -112,6 +122,9 @@ $artikel="active";
                     echo "<td> <a href=edit_article.php?id=$r[id_berita]><button type='button' class='btn btn-info'>Edit</button></a> |
                         <a href=\"delete.php?jenis=artikel&id=$r[id_berita]\"
                         onclick=\"return confirm('Anda yakin akan menghapus $r[judul_berita]?')\"><button type='button' class='btn btn-warning'>Hapus</button></a> </td> </tr>";
+                  }
+                  } else {
+                        echo "<td style='text-align:center' colspan='6'>Tidak ada data</td>";
                   }
                 }
                 ?>

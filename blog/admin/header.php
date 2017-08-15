@@ -7,9 +7,9 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>Dashboard Admin</b></a>
+            <a href="index.html" class="logo"><b>Dashboard <?php echo $sess ?></b></a>
             <!--logo end-->
-            
+
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
                     <li><a class="logout" href="logout.php">Logout</a></li>
