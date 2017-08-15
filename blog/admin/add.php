@@ -12,7 +12,7 @@
         $isi_artikel_unscape = $_POST['isi_artikel'];
         $penulis = $_POST['penulis'];
 
-        $isi_artikel = mysql_real_escape_string($isi_artikel_unscape);
+        $isi_artikel = mysqli_real_escape_string($isi_artikel_unscape);
 
 
         //get date now
