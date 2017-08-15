@@ -93,7 +93,7 @@ include 'cek_session.php'; ?>
                     echo "<td> <a href=edit_article.php?id=$r[id_berita]><button type=button class=btn btn-info>Edit</button></a> |
                         <a href=\"delete.php?jenis=artikel&id=$r[id_berita]\"
                         onclick=\"return confirm('Anda yakin akan menghapus $r[judul_berita]?')\"><button type=button class=btn btn-warning>Hapus</button></a> |
-                        <a href=\"konfirm.php?id=$r[id_berita]\"
+                        <a href=\"konfirm.php?jenis=artikel&id=$r[id_berita]\"
                         onclick=\"return confirm('Konfirmasi Berita $r[judul_berita]?')\"><button type=button class=btn btn-warning>Konfirmasi</button></a></td> </tr>";
                   }
                 } else if($sess1=="penulis") {

@@ -42,5 +42,14 @@
             echo "Error: " . $sql . "<br>" . $connection->error;
         }
 
+    } else if ($_GET['jenis'] == 'komentar') {
+        $id = $_GET['id'];
+        $query = "DELETE FROM tabel_komentar WHERE id='$id'";
+        if ($connection->query($query) === TRUE) {
+            header("location:listkoment.php");
+        } else {
+            echo "Error: " . $sql . "<br>" . $connection->error;
+        }
+
     }
 ?>

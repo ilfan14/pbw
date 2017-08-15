@@ -84,6 +84,18 @@ if ($_GET['jenis'] == "artikel") {
             echo "Error: " . $sql . "<br>" . $connection->error;
     }
 
+} else if ($_GET['jenis'] == "komentar") {
+    $id=$_POST['id'];
+    $isi_komentar = $_POST['isi_komentar'];
+
+    $sql = "UPDATE tabel_komentar SET isi_komentar='$isi_komentar' WHERE id='$id'";
+
+    if ($connection->query($sql) === TRUE) {
+        header("location:listkoment.php");
+    } else {
+            echo "Error: " . $sql . "<br>" . $connection->error;
+    }
+
 } else {
     echo "Wrong";
 }

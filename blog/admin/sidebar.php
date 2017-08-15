@@ -113,6 +113,13 @@
                           <span>Archivment</span>
                       </a>
                   </li>
+
+                  <li class="sub-menu">
+                      <a href="listkoment.php">
+                          <i class="fa fa-desktop"></i>
+                          <span>Komentar</span>
+                      </a>
+                  </li>
                   <?php } ?>
               </ul>
               <!-- sidebar menu end-->

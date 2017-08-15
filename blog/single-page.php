@@ -20,7 +20,7 @@
      ?>
         <!-- ISI -->
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 isi">
-            <div class="row">
+            <div class="#">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -38,13 +38,13 @@
                         </div>
                     </div>
 
-                    <div class="row mt" style="margin-top: 100px">
+                    <div class="mt" style="margin-top: 100px">
                       <div class="col-lg-12">
                           <div class="form-panel">
                               <h4 class="mb"><i class="fa fa-angle-right"></i> KOMEN</h4>
 
                               <?php
-                                $komentar = mysqli_query($connection, "SELECT * FROM tabel_komentar WHERE id_berita=$id ORDER BY tanggal");
+                                $komentar = mysqli_query($connection, "SELECT * FROM tabel_komentar WHERE status='Y' AND id_berita=$id ORDER BY tanggal");
                                 while ($r=mysqli_fetch_array($komentar)) {
                                     ?>
                                     <div class="container-fluid" style="border: 1px solid #cac1c1;border-radius: 10px;margin-top:1%;">
@@ -67,7 +67,7 @@
 
                                     </div>
 
-                                    <div class="container-fluid" style="border: 1px solid #cac1c1;border-radius: 10px;margin-top: 65px;padding-bottom: 10px;">
+                                      <div class="container-fluid" style="border: 1px solid #cac1c1;border-radius: 10px;margin-top: 65px;padding-bottom: 10px;">
                                     <h4 class="mb"><i class="fa fa-angle-right"></i> KOMEN</h4>
                                       <form class="form-horizontal style-form" action="admin/add.php?jenis=komen" method="POST" accept-charset="utf-8" style="margin-top: 2%;">
 
