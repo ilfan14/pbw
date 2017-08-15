@@ -1,7 +1,9 @@
-
+<?php
+    $home="active";
+ ?>
 <!DOCTYPE html>
 <html lang="en">
-    <?php 
+    <?php
         include 'header.php';
      ?>
         <!-- ISI -->
@@ -12,22 +14,22 @@
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 hot-movies">
                             <h1>Hot Movies</h1><span class="garis"></span>
 
-                            <?php 
+                            <?php
                                 $artikeldepan=mysqli_query($connection, "SELECT * FROM tabel_berita WHERE status=1 LIMIT 6 ");
                                 while ($r=mysqli_fetch_array($artikeldepan)) {
                                     echo "<a href=single-page.php?id=$r[id_berita] class='col-xs-4 col-sm-4 col-md-4 col-lg-4 kolom'>";
                                     echo "<img src=images/$r[gbr_berita] alt=''>";
-                                    echo "<h4>$r[judul_berita]</h4></a>"; 
-                                    
+                                    echo "<h4>$r[judul_berita]</h4></a>";
+
                                 }
                             ?>
 
-                            
+
                         </div>
                         <center><a href="all-movie.php"><button type="button" class="btn btn-success">More</button></a></center>
                     </div>
                 </div>
-                <?php 
+                <?php
                     include 'right-sidebar.php';
                 ?>
             </div>

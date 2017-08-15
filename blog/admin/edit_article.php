@@ -1,6 +1,7 @@
 <?php
 include 'koneksi.php';
 include 'cek_session.php';
+$artikel="active";
 $id=$_GET['id'];
 $sql="SELECT * FROM tabel_berita WHERE id_berita='$id'";
 $r = $connection->query($sql);
@@ -27,7 +28,7 @@ $data = $r->fetch_array();
     <!-- <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-daterangepicker/daterangepicker.css" /> -->
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style1.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
     <script src="assets/tinymce/tinymce.min.js"></script>
     <script>tinymce.init({ selector:'textarea',
@@ -68,37 +69,35 @@ $data = $r->fetch_array();
                       <h4 class="mb"><i class="fa fa-angle-right"></i> Ubah  Artikel</h4>
                       <form class="form-horizontal style-form" action="update.php?jenis=artikel" method="POST" accept-charset="utf-8" enctype="multipart/form-data">
 
-                      <input type="hidden" name="id" id="input_id" value="<?php echo $data['id_berita'] ?>" placeholder="">
+                          <input type="hidden" name="id" id="input_id" value="<?php echo $data['id_berita'] ?>" placeholder="">
 
                           <div class="col-lg-12 form-group">
-                          <div class="">
-                            <label class="col-sm-1 col-sm-1 control-label">Kategori</label>
-                              <div class="col-sm-2">
-                              <select class="form-control" name="kategori_artikel">
-                                <option value="">PILIH KATEGORI</option>
-                                <?php
-                                  $kategori=mysqli_query($connection, "SELECT * FROM tabel_kategori");
-                                  while ($r=mysqli_fetch_array($kategori)) {
-                                    if ($data[id_kategori] == $r[id_kategori]){
-                                      echo "<option value=$r[id_kategori] selected> $r[kategori]</option>";
-                                    } else {
-                                      echo "<option value=$r[id_kategori] > $r[kategori]</option>";
-                                    }
-                                  }
-                                ?>
-                              </select>
-                              </div>
-                          </div>
+                            <div class="">
+                              <label class="col-sm-1 col-sm-1 control-label">Kategori</label>
+                                <div class="col-sm-2">
+                                  <select class="form-control" name="kategori_artikel">
+                                    <option value="">PILIH KATEGORI</option>
+                                      <?php
+                                        $kategori=mysqli_query($connection, "SELECT * FROM tabel_kategori");
+                                        while ($r=mysqli_fetch_array($kategori)) {
+                                          if ($data[id_kategori] == $r[id_kategori]){
+                                            echo "<option value=$r[id_kategori] selected> $r[kategori]</option>";
+                                          } else {
+                                            echo "<option value=$r[id_kategori] > $r[kategori]</option>";
+                                          }
+                                        }
+                                      ?>
+                                  </select>
+                                </div>
+                            </div>
 
-                          <div class="" style="float:right;">
-                              <label class="col-sm-2 col-sm-2 control-label">Judul</label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="judul_artikel" id="judul_artikel" value="<?php echo $data['judul_berita']; ?>" placeholder="judul artikel">
-                              </div>
+                            <div class="" style="float:right;">
+                                <label class="col-sm-2 col-sm-2 control-label">Judul</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="judul_artikel" id="judul_artikel" value="<?php echo $data['judul_berita']; ?>" placeholder="judul artikel">
+                                </div>
+                            </div>
                           </div>
-
-                          </div>
-
 
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Isi Artikel</label>
@@ -106,8 +105,6 @@ $data = $r->fetch_array();
                                   <textarea class="form-control" rows="10" name="isi_artikel" id="isi_artikel" placeholder="isi artikel" style="resize: none"><?php echo $data['isi_berita']; ?></textarea>
                               </div>
                           </div>
-
-
 
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Gambar Artikel</label>
@@ -119,20 +116,14 @@ $data = $r->fetch_array();
                           <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">Penulis Artikel</label>
                             <div class="col-sm-10">
-                              <input class="form-control" name="penulis" id="penulis" value="<?php echo $data['penulis']; ?>" placeholder="penulis" disabled>
+                                  <input class="form-control" type="text" name="penulis" id="penulis" value="<?php echo $data['penulis']; ?>" placeholder="" readonly >
                             </div>
                           </div>
 
-
-
                           <div style="margin-left: 83%;">
-                  <button type="submit" class="btn btn-success">Ubah</button>
-                  <a href="list_article.php"><button type="button" class="btn btn-danger">Batal</button></a>
-              </div>
-
-
-                        <!-- <input type="submit" id="bsubmit" name="" value="SIMPAN" > -->
-
+                              <button type="submit" class="btn btn-success">Ubah</button>
+                              <a href="list_article.php"><button type="button" class="btn btn-danger">Batal</button></a>
+                          </div>
                       </form>
                   </div>
               </div><!-- col-lg-12-->

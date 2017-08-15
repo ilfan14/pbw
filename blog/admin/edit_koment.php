@@ -1,6 +1,7 @@
 <?php
 include 'koneksi.php';
 include 'cek_session.php';
+$komentar="active";
 $id=$_GET['id'];
 $sql="SELECT tabel_berita.id_berita,tabel_berita.judul_berita,tabel_komentar.* FROM tabel_berita INNER JOIN tabel_komentar ON tabel_berita.id_berita = tabel_komentar.id_berita WHERE tabel_komentar.status='T'";
 $r = $connection->query($sql);
@@ -24,7 +25,7 @@ $data = $r->fetch_array();
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style1.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

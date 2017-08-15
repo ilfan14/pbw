@@ -1,6 +1,6 @@
 <?php
     include 'koneksi.php';
-
+    $home="active";
     $id=$_GET['id'];
     $sql = "UPDATE tabel_berita SET dibaca=dibaca+1 WHERE id_berita='$id'";
 

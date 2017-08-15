@@ -1,4 +1,4 @@
-<?php 
+<?php
     include 'koneksi.php';
  ?>
 <head>
@@ -33,16 +33,16 @@
         <!-- HEADER -->
         <div class="header">
             <ul id="autoplay" class="content-slider">
-                 <?php 
+                 <?php
                     $artikelhot=mysqli_query($connection, "SELECT * FROM tabel_berita WHERE status=1 ORDER BY dibaca DESC LIMIT 6");
                     while ($r=mysqli_fetch_array($artikelhot)) {
                         echo "<li><a href=single-page.php?id=$r[id_berita]>";
                         echo "<img src=images/$r[gbr_berita] alt=''> </a>";
-                        echo "</li>"; 
-                        
+                        echo "</li>";
+
                     }
                 ?>
-                
+
             </ul>
         </div>
         <!-- NAVIGASI -->
@@ -63,11 +63,11 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="index.php" class="padding">Home</a></li>
-                            <li class="dropdown">
+                            <li class="<?php echo $home ?>"><a href="index.php" class="padding">Home</a></li>
+                            <li class="dropdown <?php echo $genre ?>"">
                                 <a href="#" class="dropdown-toggle padding" data-toggle="dropdown">Genre <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                <?php 
+                                <?php
                                     $listkategori=mysqli_query($connection, "SELECT * FROM tabel_kategori");
                                     while ($r=mysqli_fetch_array($listkategori)) {
                                         echo "<li><a href=category-page.php?id=$r[id_kategori]> $r[kategori]</a></li>";
@@ -75,8 +75,8 @@
                                  ?>
                                 </ul>
                             </li>
-                            
-                            <li><a href="#footer" class="padding">About</a></li>
+
+                            <li class="<?php echo $about ?>""><a href="#footer" class="padding">About</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">

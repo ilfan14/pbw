@@ -1,6 +1,8 @@
 <?php
 include 'koneksi.php';
-include 'cek_session.php'; ?>
+include 'cek_session.php';
+$artikel="active";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +24,7 @@ include 'cek_session.php'; ?>
     <!-- <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-daterangepicker/daterangepicker.css" /> -->
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style1.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
     <script src="assets/tinymce/tinymce.min.js"></script>
@@ -105,19 +107,16 @@ include 'cek_session.php'; ?>
                               </div>
                           </div>
 
-<<<<<<< HEAD
                                   <input type="hidden" class="form-control" name="penulis" id="penulis" value="<?php echo $sess ?>" placeholder="penulis">
 
-=======
+
                           <div class="form-group">
-                            
+
                             <label class="col-sm-2 col-sm-2 control-label">Penulis Artikel</label>
                             <div class="col-sm-10">
-                                  <input disabled class="form-control" name="penulis" id="penulis" value="<?php echo $sess ?>" placeholder="penulis">
+                                  <input readonly  class="form-control" name="penulis" id="penulis" value="<?php echo $sess ?>" placeholder="penulis">
                             </div>
                           </div>
-                 
->>>>>>> 5048ddd9109c8b34ad9108083aff6a01c2b03acb
 
 
                           <div style="margin-left: 83%;">

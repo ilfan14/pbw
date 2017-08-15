@@ -1,6 +1,8 @@
 <?php
 include 'koneksi.php';
-include 'cek_session.php'; ?>
+include 'cek_session.php';
+$komentar="active";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +21,7 @@ include 'cek_session.php'; ?>
   <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/style1.css" rel="stylesheet">
   <link href="assets/css/style-responsive.css" rel="stylesheet">
 
   </head>
@@ -43,12 +45,12 @@ include 'cek_session.php'; ?>
       <!--main content start-->
       <section id="main-content">
         <section class="wrapper">
-         <h3><i class="fa fa-angle-right"></i> Basic Table Examples</h3>
+         <h3><i class="fa fa-angle-right"></i> DAFTAR KOMENTAR</h3>
          <div class="row">
 
            <div class="col-md-12">
             <div class="content-panel">
-             <h4><i class="fa fa-angle-right"></i> Basic Table</h4>
+             <h4><i class="fa fa-angle-right"></i> Tabel Komentar</h4>
              <hr>
              <table class="table">
               <thead>
@@ -75,10 +77,11 @@ include 'cek_session.php'; ?>
                     echo "<td> $r[judul_berita] </td>";
                     echo "<td> $r[isi_komentar] </td>";
                     echo "<td> $r[tanggal] </td>";
-                    echo "<td> <a href=edit_koment.php?id=$r[id]><button type=button class=btn btn-info>Edit</button></a> |
+                    echo "<td> <a href=edit_koment.php?id=$r[id]><button type='button' class='btn btn-info'>Edit</button></a> |
                         <a href=\"delete.php?jenis=komentar&id=$r[id]\"
-                        onclick=\"return confirm('Anda yakin akan menghapus komentar $r[judul_berita]?')\"><button type=button class=btn btn-warning>Hapus</button></a> <a href=\"konfirm.php?jenis=komentar&id=$r[id]\"
-                        onclick=\"return confirm('Konfirmasi Komentar $r[nama]?')\"><button type=button class=btn btn-warning>Konfirmasi</button></a></td> </tr>";
+                        onclick=\"return confirm('Anda yakin akan menghapus komentar $r[judul_berita]?')\"><button type='button' class='btn btn-danger'>Hapus</button></a> |
+                        <a href=\"konfirm.php?jenis=komentar&id=$r[id]\"
+                        onclick=\"return confirm('Konfirmasi Komentar $r[nama]?')\"><button type='button' class='btn btn-success'>Konfirmasi</button></a></td> </tr>";
                   }
                 ?>
               </tbody>

@@ -102,7 +102,7 @@
         if ($connection->query($sql) === TRUE) {
 
             // header("location:list_user.php");
-            echo "<script>window.history.back();</script>";
+            echo "<script> window.history.back();</script>";
             } else {
                 echo "Error: " . $sql . "<br>" . $connection->error;
             }

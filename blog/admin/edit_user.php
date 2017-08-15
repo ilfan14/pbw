@@ -1,6 +1,7 @@
 <?php
 include 'koneksi.php';
 include 'cek_session.php';
+$user="active";
 $id=$_GET['id'];
 $sql="SELECT * FROM tabel_user WHERE id_user='$id'";
 $r = $connection->query($sql);
@@ -32,7 +33,7 @@ include 'koneksi.php';
     <!-- <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-daterangepicker/daterangepicker.css" /> -->
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style1.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

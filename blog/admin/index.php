@@ -1,6 +1,7 @@
 <?php
 include '../koneksi.php';
-include 'cek_session.php'; ?>
+include 'cek_session.php';
+$dashboard="active"?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,7 +22,7 @@ include 'cek_session.php'; ?>
     <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style1.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
     <script src="assets/js/chart-master/Chart.js"></script>
@@ -58,10 +59,10 @@ include 'cek_session.php'; ?>
                   	<div class="row mtbox">
                   		<div class="col-md-2 col-sm-2 col-md-offset-1 box0">
                   			<div class="box1">
-					  		
+
 					  			<span class="li_cloud"></span>
 
-                  <?php  
+                  <?php
 
                     $jumlahvisit=mysqli_query($connection, "SELECT SUM(dibaca) as jumlah FROM tabel_berita");
                     while ($r=mysqli_fetch_array($jumlahvisit)) {
@@ -69,7 +70,7 @@ include 'cek_session.php'; ?>
                     }
 
                   ?>
-					  			
+
 
 
                   		</div>
@@ -77,7 +78,7 @@ include 'cek_session.php'; ?>
                   			<div class="box1">
 					  			<span class="li_stack"></span>
 
-                  <?php  
+                  <?php
 
                     $jumlahcommant=mysqli_query($connection, "SELECT count(id) as jkomen FROM tabel_komentar");
                     while ($r=mysqli_fetch_array($jumlahcommant)) {
@@ -85,13 +86,13 @@ include 'cek_session.php'; ?>
                     }
 
                   ?>
-					  			
+
                   		</div>
                   		<div class="col-md-2 col-sm-2 box0">
                   			<div class="box1">
 					  			<span class="li_news"></span>
 
-                  <?php  
+                  <?php
 
                     $jumlahartikel=mysqli_query($connection, "SELECT count(id_berita) as jartikel FROM tabel_berita");
                     while ($r=mysqli_fetch_array($jumlahartikel)) {
@@ -168,7 +169,7 @@ include 'cek_session.php'; ?>
 								<p><img src="assets/img/ui-zac.jpg" class="img-circle" width="80"></p>
 
 
-                <?php  
+                <?php
 
                     $topuser=mysqli_query($connection, "SELECT count(penulis) AS jartikel,tabel_berita.penulis FROM `tabel_berita` GROUP BY penulis ORDER BY jartikel DESC LIMIT 1");
                     while ($r=mysqli_fetch_array($topuser)) {
@@ -181,10 +182,10 @@ include 'cek_session.php'; ?>
 
                 ?>
 
-                
 
 
-								
+
+
 							</div>
 						</div><!-- /col-md-4 -->
 

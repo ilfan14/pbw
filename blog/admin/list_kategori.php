@@ -1,6 +1,8 @@
 <?php
 include 'koneksi.php';
-include 'cek_session.php'; ?>
+include 'cek_session.php';
+$kategori="active";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +21,7 @@ include 'cek_session.php'; ?>
   <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/style1.css" rel="stylesheet">
   <link href="assets/css/style-responsive.css" rel="stylesheet">
 
   </head>
@@ -43,6 +45,7 @@ include 'cek_session.php'; ?>
       <!--main content start-->
       <section id="main-content">
         <section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i> DAFTAR KATEGORI</h3>
          <div class="row">
 
            <div class="col-md-12">
@@ -54,6 +57,7 @@ include 'cek_session.php'; ?>
                 <tr>
                   <th>No.</th>
                   <th>Nama Kategori</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -65,9 +69,9 @@ include 'cek_session.php'; ?>
                     echo "<tr> <td>";
                     echo $nomor;
                     echo "</td> <td> $r[kategori] </td>";
-                    echo "<td> <a href=edit_kategori.php?id=$r[id_kategori]><button type=button class=btn btn-info>Edit</button></a> |
+                    echo "<td> <a href=edit_kategori.php?id=$r[id_kategori]><button type='button' class='btn btn-info'>Edit</button></a> |
                         <a href=\"delete.php?jenis=kategori&id=$r[id_kategori]\"
-                        onclick=\"return confirm('Anda yakin akan menghapus $r[kategori]?')\"><button type=button class=btn btn-warning>Hapus</button></a> </td> </tr>";
+                        onclick=\"return confirm('Anda yakin akan menghapus $r[kategori]?')\"><button type='button' class='btn btn-danger'>Hapus</button></a> </td> </tr>";
                   }
                 ?>
               </tbody>

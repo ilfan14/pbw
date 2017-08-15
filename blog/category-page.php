@@ -1,11 +1,12 @@
 <?php
     include 'koneksi.php';
+    $genre="active";
     $id=$_GET['id'];
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-    <?php 
+    <?php
         include 'header.php';
      ?>
         <!-- ISI -->
@@ -15,30 +16,30 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 hot-movies">
 
-                            <?php 
+                            <?php
                                 $namakategori=mysqli_query($connection, "SELECT * FROM tabel_kategori WHERE id_kategori=$id ");
                                 while ($r=mysqli_fetch_array($namakategori)) {
                                     echo "<h1>$r[kategori]</h1><span class=garis></span>";
 
-                                    
+
                                 }
                             ?>
 
-                            <?php 
+                            <?php
                                 $artikeldepan=mysqli_query($connection, "SELECT * FROM tabel_berita WHERE status=1 AND id_kategori=$id LIMIT 6 ");
                                 while ($r=mysqli_fetch_array($artikeldepan)) {
                                     echo "<a href=single-page.php?id=$r[id_berita] class='col-xs-4 col-sm-4 col-md-4 col-lg-4 kolom'>";
                                     echo "<img src=images/$r[gbr_berita] alt=''>";
-                                    echo "<h4>$r[judul_berita]</h4></a>"; 
-                                    
+                                    echo "<h4>$r[judul_berita]</h4></a>";
+
                                 }
                             ?>
 
-                            
+
                         </div>
                     </div>
                 </div>
-                <?php 
+                <?php
                     include 'right-sidebar.php';
                 ?>
             </div>
