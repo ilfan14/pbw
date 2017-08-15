@@ -37,7 +37,7 @@
                     $artikelhot=mysqli_query($connection, "SELECT * FROM tabel_berita WHERE status=1 ORDER BY dibaca DESC LIMIT 6");
                     while ($r=mysqli_fetch_array($artikelhot)) {
                         echo "<li><a href=single-page.php?id=$r[id_berita]>";
-                        echo "<img src=images/$r[gbr_berita] alt=''> </a>";
+                        echo "<img src=images/$r[gbr_berita] alt='' style='width:100%'> </a>";
                         echo "</li>";
 
                     }
