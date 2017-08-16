@@ -1,7 +1,11 @@
 <?php
 include 'koneksi.php';
 include 'cek_session.php';
+if ($_GET['list']=="list") {
+  $archivkomentar="active";
+} else {
 $komentar="active";
+}
 $id=$_GET['id'];
 $sql="SELECT tabel_berita.id_berita,tabel_berita.judul_berita,tabel_komentar.* FROM tabel_berita INNER JOIN tabel_komentar ON tabel_berita.id_berita = tabel_komentar.id_berita WHERE tabel_komentar.status='T'";
 $r = $connection->query($sql);
@@ -96,7 +100,11 @@ $data = $r->fetch_array();
 
                           <div style="margin-left: 83%;">
                   <button type="submit" class="btn btn-success">Simpan</button>
-                  <a href="listkoment.php"><button type="button" class="btn btn-danger">Batal</button></a>
+                  <a href="<?php if ($_GET['list']=="list") {
+                              echo "listarchiv.php?arsip=komentar";
+                            } else {
+                            echo "listkoment.php";
+                            } ?>"><button type="button" class="btn btn-danger">Batal</button></a>
               </div>
 
 

@@ -52,7 +52,7 @@
                   <?php } else if ($sess1=='penulis')  { ?>
                     <li class="mt <?php echo $dashboard ?>">
                       <a href="index.php">
-                          <i class="fa fa-dashboard"></i>
+                            <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
                   </li>
@@ -101,10 +101,10 @@
                       </a>
                   </li>
 
-                  <li class="sub-menu <?php echo $archiv ?>">
-                      <a href="listarchiv.php">
+                  <li class="sub-menu <?php echo $archivartikel ?>">
+                      <a href="listarchiv.php?arsip=artikel">
                           <i class="fa fa-file-archive-o"></i>
-                          <span>Archivment</span>
+                          <span>Archivment Article</span>
                       </a>
                   </li>
 
@@ -112,6 +112,13 @@
                       <a href="listkoment.php">
                           <i class="fa fa-file-text-o"></i>
                           <span>Komentar</span>
+                      </a>
+                  </li>
+
+                  <li class="sub-menu <?php echo $archivkomentar ?>">
+                      <a href="listarchiv.php?arsip=komentar">
+                          <i class="fa fa-file-archive-o"></i>
+                          <span>Archivment Komentar</span>
                       </a>
                   </li>
                   <?php } ?>

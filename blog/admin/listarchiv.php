@@ -1,7 +1,11 @@
 <?php
 include 'koneksi.php';
 include 'cek_session.php';
-$archiv="active";
+if ($_GET['arsip']=='artikel') {
+$archivartikel="active";
+} elseif($_GET['arsip']=='komentar') {
+$archivkomentar="active";
+}
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +69,8 @@ $archiv="active";
               </thead>
               <tbody>
                 <?php
-                  $kategori=mysqli_query($connection, "SELECT tabel_berita.*, tabel_kategori.kategori FROM tabel_berita INNER JOIN tabel_kategori ON tabel_kategori.id_kategori = tabel_berita.id_kategori WHERE tabel_berita.status=1");
+                if ($_GET['arsip']=="artikel") {
+                  $kategori=mysqli_query($connection, "SELECT tabel_berita.*, tabel_kategori.kategori FROM tabel_berita INNER JOIN tabel_kategori ON tabel_kategori.id_kategori = tabel_berita.id_kategori WHERE tabel_berita.status=1 ORDER BY tabel_berita.judul_berita ASC");
                   $nomor = null;
                   if (mysqli_num_rows($kategori) > 0) {
                   while ($r=mysqli_fetch_array($kategori)) {
@@ -76,12 +81,34 @@ $archiv="active";
                     echo "<td> $r[penulis] </td>";
                     echo "<td> $r[kategori] </td>";
                     echo "<td> $r[tanggal] </td>";
-                    echo "<td> <a href=\"delete.php?jenis=artikel&id=$r[id_berita]\"
+                    echo "<td> <a href=edit_article.php?jenis=artikel&id=$r[id_berita]&list=list><button type='button' class='btn btn-info'>Edit</button></a> |
+                        <a href=\"delete.php?jenis=artikel&id=$r[id_berita]\"
                         onclick=\"return confirm('Anda yakin akan menghapus $r[judul_berita]?')\"><button type='button' class='btn btn-danger'>Hapus</button></a></td> </tr>";
-                  }
-                }else {
+                      }
+                    }else {
                         echo "<td style='text-align:center' colspan='6'>Tidak ada data</td>";
                   }
+                } elseif($_GET['arsip']=="komentar") {
+                  $kategori=mysqli_query($connection, "SELECT tabel_berita.id_berita,tabel_berita.judul_berita,tabel_komentar.* FROM tabel_berita INNER JOIN tabel_komentar ON tabel_berita.id_berita = tabel_komentar.id_berita WHERE tabel_komentar.status='Y' ORDER BY tabel_berita.judul_berita ASC");
+                  $nomor = null;
+                    if (mysqli_num_rows($kategori) > 0) {
+                  while ($r=mysqli_fetch_array($kategori)) {
+                    $nomor += 1;
+                    echo "<tr> <td>";
+                    echo $nomor;
+                    echo "</td> <td> $r[nama] </td>";
+                    echo "<td> $r[email] </td>";
+                    echo "<td> $r[judul_berita] </td>";
+                    echo "<td> $r[isi_komentar] </td>";
+                    echo "<td> $r[tanggal] </td>";
+                    echo "<td> <a href=edit_koment.php?id=$r[id]&list=list><button type='button' class='btn btn-info'>Edit</button></a> |
+                        <a href=\"delete.php?jenis=komentar&id=$r[id]\"
+                        onclick=\"return confirm('Anda yakin akan menghapus komentar $r[judul_berita]?')\"><button type='button' class='btn btn-danger'>Hapus</button></a> </td> </tr>";
+                      }
+                      }else {
+                        echo "<td style='text-align:center' colspan='7'>Tidak ada data</td>";
+                  }
+                }
                 ?>
               </tbody>
             </table>

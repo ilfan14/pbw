@@ -65,7 +65,7 @@ $user="active";
               </thead>
               <tbody>
                 <?php
-                  $kategori=mysqli_query($connection, "SELECT *  FROM tabel_user");
+                  $kategori=mysqli_query($connection, "SELECT *  FROM tabel_user ORDER BY level ASC");
                   $nomor = null;
                   if (mysqli_num_rows($kategori) > 0) {
                   while ($r=mysqli_fetch_array($kategori)) {

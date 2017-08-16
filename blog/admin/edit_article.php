@@ -1,7 +1,11 @@
 <?php
 include 'koneksi.php';
 include 'cek_session.php';
+if ($_GET['list']=="list") {
+  $archivartikel="active";
+} else {
 $artikel="active";
+}
 $id=$_GET['id'];
 $sql="SELECT * FROM tabel_berita WHERE id_berita='$id'";
 $r = $connection->query($sql);
@@ -122,7 +126,11 @@ $data = $r->fetch_array();
 
                           <div style="margin-left: 83%;">
                               <button type="submit" class="btn btn-success">Ubah</button>
-                              <a href="list_article.php"><button type="button" class="btn btn-danger">Batal</button></a>
+                              <a href="<?php if ($_GET['list']=="list") {
+                              echo "listarchiv.php?arsip=artikel";
+                            } else {
+                            echo "list_article.php";
+                            } ?>"><button type="button" class="btn btn-danger">Batal</button></a>
                           </div>
                       </form>
                   </div>

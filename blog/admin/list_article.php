@@ -67,7 +67,7 @@ $artikel="active";
                 <?php
                 if ($sess1=="admin") {
 
-                  $kategori=mysqli_query($connection, "SELECT tabel_berita.*, tabel_kategori.kategori FROM tabel_berita INNER JOIN tabel_kategori ON tabel_kategori.id_kategori = tabel_berita.id_kategori");
+                  $kategori=mysqli_query($connection, "SELECT tabel_berita.*, tabel_kategori.kategori FROM tabel_berita INNER JOIN tabel_kategori ON tabel_kategori.id_kategori = tabel_berita.id_kategori ORDER BY tabel_berita.judul_berita ASC");
                   $nomor = null;
                   while ($r=mysqli_fetch_array($kategori)) {
                     if ($r > 0) {
@@ -78,7 +78,7 @@ $artikel="active";
                     echo "<td> $r[penulis] </td>";
                     echo "<td> $r[kategori] </td>";
                     echo "<td> $r[tanggal] </td>";
-                    echo "<td> <a href=edit_article.php?jenis=artikel&id=$r[id_berita]><button type='button' class='btn btn-info'>Edit</button></a> |
+                    echo "<td> <a href=edit_article.php?jenis=artikel&id=$r[id_berita]&list=artikel><button type='button' class='btn btn-info'>Edit</button></a> |
                         <a href=\"delete.php?jenis=artikel&id=$r[id_berita]\"
                         onclick=\"return confirm('Anda yakin akan menghapus $r[judul_berita]?')\"><button type='button' class='btn btn-danger'>Hapus</button></a> </td> </tr>";
                       }else {
@@ -86,7 +86,7 @@ $artikel="active";
                       }
                   }
                 } else if($sess1=="editor") {
-                    $kategori=mysqli_query($connection, "SELECT tabel_berita.*, tabel_kategori.kategori FROM tabel_berita INNER JOIN tabel_kategori ON tabel_kategori.id_kategori = tabel_berita.id_kategori WHERE tabel_berita.status=0");
+                    $kategori=mysqli_query($connection, "SELECT tabel_berita.*, tabel_kategori.kategori FROM tabel_berita INNER JOIN tabel_kategori ON tabel_kategori.id_kategori = tabel_berita.id_kategori WHERE tabel_berita.status=0 ORDER BY tabel_berita.judul_berita ASC");
                   $nomor = null;
                   if (mysqli_num_rows($kategori) > 0) {
                   while ($r=mysqli_fetch_array($kategori)) {
@@ -97,7 +97,7 @@ $artikel="active";
                     echo "<td> $r[penulis] </td>";
                     echo "<td> $r[kategori] </td>";
                     echo "<td> $r[tanggal] </td>";
-                    echo "<td> <a href=edit_article.php?id=$r[id_berita]><button type='button' class='btn btn-info'>Edit</button></a> |
+                    echo "<td> <a href=edit_article.php?id=$r[id_berita]&list=artikel><button type='button' class='btn btn-info'>Edit</button></a> |
                         <a href=\"delete.php?jenis=artikel&id=$r[id_berita]\"
                         onclick=\"return confirm('Anda yakin akan menghapus $r[judul_berita]?')\"><button type='button' class='btn btn-danger'>Hapus</button></a> |
                         <a href=\"konfirm.php?jenis=artikel&id=$r[id_berita]\"
@@ -108,7 +108,7 @@ $artikel="active";
                         echo "<td style='text-align:center' colspan='6'>Tidak ada data</td>";
                   }
                 } else if($sess1=="penulis") {
-                  $kategori=mysqli_query($connection, "SELECT tabel_berita.*, tabel_kategori.kategori FROM tabel_berita INNER JOIN tabel_kategori ON tabel_kategori.id_kategori = tabel_berita.id_kategori WHERE tabel_berita.status=0 AND tabel_berita.penulis='$sess'");
+                  $kategori=mysqli_query($connection, "SELECT tabel_berita.*, tabel_kategori.kategori FROM tabel_berita INNER JOIN tabel_kategori ON tabel_kategori.id_kategori = tabel_berita.id_kategori WHERE tabel_berita.status=0 AND tabel_berita.penulis='$sess' ORDER BY tabel_berita.judul_berita ASC");
                   $nomor = null;
                   if (mysqli_num_rows($kategori) > 0) {
                   while ($r=mysqli_fetch_array($kategori)) {
@@ -119,7 +119,7 @@ $artikel="active";
                     echo "<td> $r[penulis] </td>";
                     echo "<td> $r[kategori] </td>";
                     echo "<td> $r[tanggal] </td>";
-                    echo "<td> <a href=edit_article.php?id=$r[id_berita]><button type='button' class='btn btn-info'>Edit</button></a> |
+                    echo "<td> <a href=edit_article.php?id=$r[id_berita]&list=artikel><button type='button' class='btn btn-info'>Edit</button></a> |
                         <a href=\"delete.php?jenis=artikel&id=$r[id_berita]\"
                         onclick=\"return confirm('Anda yakin akan menghapus $r[judul_berita]?')\"><button type='button' class='btn btn-warning'>Hapus</button></a> </td> </tr>";
                   }
